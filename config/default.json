@@ -1,0 +1,9 @@
+{
+    "mongoURI1": "mongodb+srv://faten:fatenDB@nanodev.bdpxo.mongodb.net/nano?retryWrites=true&w=majority",
+    "mongoURI":"mongodb://localhost:27017/newapp",
+    "jwtSecret": "tokennanodevpassword",
+    "email": "faten@gmail.com",
+    "motdepasse": "hello"
+
+
+}
