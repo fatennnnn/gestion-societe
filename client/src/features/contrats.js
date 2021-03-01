@@ -1,5 +1,28 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import download from "downloadjs";
+
+export const downloadFile = createAsyncThunk(
+  "contrat/download",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `/download-file/${data.path.split("/")[1]}`,
+
+        {
+          responseType: "blob",
+        }
+      );
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      console.log(url);
+      const split = data.path.split("/");
+      const filename = split[split.length - 1];
+      return download(response.data, filename, data.mimetype);
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
 
 export const getContratUserId = createAsyncThunk(
   "contrat/usercontrat-id",

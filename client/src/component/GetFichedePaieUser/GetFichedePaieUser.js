@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Document, Page, pdfjs } from "react-pdf";
 
-import { getFicheDePaie } from "../../features/fichedePaies";
+import { getFicheDePaie, downloadFile } from "../../features/fichedePaies";
 
 const GetFichedePaieUser = () => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -29,6 +29,9 @@ const GetFichedePaieUser = () => {
   const onDocumentLoadSuccess = ({ numPages }) => {
     setValues({ ...values, numPages });
   };
+  const handleDownload = (path) => {
+    dispatch(downloadFile({ path, mimetype: "application/pdf" }));
+  };
   return (
     <div>
       <h2>liste FICHE DE PAIE </h2>
@@ -47,6 +50,9 @@ const GetFichedePaieUser = () => {
                 <Page pageNumber={pageNumber} width={300} height={200} />
               </Document>
             </div>
+            <button onClick={() => handleDownload(item.fichedePaieUrl)}>
+              telecharger
+            </button>
           </div>
         ))
       ) : (

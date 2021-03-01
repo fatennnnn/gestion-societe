@@ -1,5 +1,43 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import download from "downloadjs";
+
+// const downloadFile = async (path, mimetype) => {
+//   try {
+//     const result = await axios.get("/download-file", {
+//       responseType: "blob",
+//     });
+//     const split = path.split("/");
+//     const filename = split[split.length - 1];
+//     setErrorMsg("");
+//     return download(result.data, filename, mimetype);
+//   } catch (error) {
+//     if (error.response && error.response.status === 400) {
+//       setErrorMsg("Error while downloading file. Try again later");
+//     }
+//   }
+// };
+export const downloadFile = createAsyncThunk(
+  "fficheDePaie/download",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `/download-file/${data.path.split("/")[1]}`,
+
+        {
+          responseType: "blob",
+        }
+      );
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      console.log(url);
+      const split = data.path.split("/");
+      const filename = split[split.length - 1];
+      return download(response.data, filename, data.mimetype);
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
 
 export const getFicheDePaie = createAsyncThunk(
   "fficheDePaie/employé-id",
@@ -12,6 +50,7 @@ export const getFicheDePaie = createAsyncThunk(
     }
   }
 );
+
 export const addFicheDePaie = createAsyncThunk(
   "ficheDePaie/create-fichedepaie",
   async (formData, { rejectWithValue }) => {

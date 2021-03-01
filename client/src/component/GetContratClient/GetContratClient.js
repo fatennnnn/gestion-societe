@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Document, Page, pdfjs } from "react-pdf";
 
-import { getContratUserId } from "../../features/contrats";
+import { getContratUserId, downloadFile } from "../../features/contrats";
 
 const GetContratClient = () => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -26,6 +26,9 @@ const GetContratClient = () => {
   const onDocumentLoadSuccess = ({ numPages }) => {
     setValues({ ...values, numPages });
   };
+  const handleDownload = (path) => {
+    dispatch(downloadFile({ path, mimetype: "application/pdf" }));
+  };
   return (
     <div>
       <h2>liste contrat </h2>
@@ -45,6 +48,9 @@ const GetContratClient = () => {
                 <Page pageNumber={pageNumber} width={300} height={200} />
               </Document>
             </div>
+            <button onClick={() => handleDownload(item.contratUrl)}>
+              telecharger
+            </button>
             {/* console.log("id",{item._id}) */}
           </div>
         ))

@@ -11,10 +11,12 @@ import { Document, Page, pdfjs } from "react-pdf";
 // } from "@react-pdf/renderer;
 import FileSaver from "file-saver";
 import { download } from "downloadjs";
+// import useFileDownloader from "hooks/useFileDownloader";
 
 import {
   getBonCommandeUserId,
   deleteBonCommande,
+  downloadFile,
 } from "../../features/bonCommandes";
 
 // var FileSaver = require("file-saver");
@@ -50,7 +52,13 @@ const UserBonCommandeList = () => {
       <Page pageNumber={pageNumber} width={300} height={200} />
     </Document>
   );
+  // const FileDownloader = () => {
+  //   const [downloadFile, downloaderComponentUI] = useFileDownloader();
 
+  //   const download = (file) => downloadFile(file);
+  const handleDownload = (path) => {
+    dispatch(downloadFile({ path, mimetype: "application/pdf" }));
+  };
   return (
     <div>
       <h2>liste Bon Commande :{user.nom} </h2>
@@ -62,7 +70,7 @@ const UserBonCommandeList = () => {
           <div key={item._id}>
             <span>{item.nombonCommande}</span>
             <div style={{ width: 600 }}>{myDoc(item)}</div>
-
+            {/* 
             <button onClick={() => download(`../${item.contratUrl}`)}>
               telecharger
             </button>
@@ -71,8 +79,11 @@ const UserBonCommandeList = () => {
               download="proposed_file_name.pdf"
             >
               Download
-            </a>
+            </a> */}
             <button onClick={() => handleClick(item._id)}>supprimer</button>
+            <button onClick={() => handleDownload(item.bonCommandeUrl)}>
+              telecharger
+            </button>
           </div>
         ))
       ) : (

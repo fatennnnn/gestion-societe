@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db");
+var fs = require("fs");
 //role admin
 const createAdmin = require("./utils/createadmin");
 const authRoutes = require("./routes/auth");
@@ -41,6 +42,18 @@ app.get("/", (req, res) => res.send("api runing"));
 //nom du input file for facture and contrat of client
 app.use(multer({ storage: fileStorage, fileFilter }).single("facture"));
 app.use("/factures", express.static(path.join(__dirname, "factures")));
+
+app.get("/download-file/:fileUrl", async (req, res, next) => {
+  try {
+    const { fileUrl } = req.params;
+    res.set({
+      "Content-Type": "application/pdf",
+    });
+    res.sendFile(path.join(__dirname, `factures/${fileUrl}`));
+  } catch (error) {
+    next(error);
+  }
+});
 
 //nom du input file for fichede paie of worker
 // app.use(multer({ storage: fileStoragee, fileFilter }).single("ficheDePaie"));
