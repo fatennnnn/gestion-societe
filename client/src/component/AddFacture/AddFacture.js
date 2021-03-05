@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { ImSpinner9 } from "react-icons/im";
 import { IconContext } from "react-icons";
 import { addFacture } from "../../features/factures";
-
+import "./AddFacture.css";
 const AddFacture = ({ userId }) => {
   const ref = React.useRef();
   const clearPdf = () => {
@@ -42,32 +42,29 @@ const AddFacture = ({ userId }) => {
     setValues({ ...values, factureUrl: e.target.files[0] });
   };
   return (
-    <div>
+    <div className="factureliste">
       <h2>Ajouter Facture</h2>
       <form>
-        <div>
+        <div className="factureliste__facture">
           <h5>NOM Facture</h5>
           <input
+            className="input__form valid_input"
             type="text"
             name="nomfacture"
             value={nomfacture}
             onChange={handleChange}
           />
           <h5> Facture URL</h5>
-          {/* <input
-            type="text"
-            name="factureURL"
-            value={factureUrl}
-            onChange={handleChange}
-          /> */}
+
           <input
+            className="input__form valid_input"
             ref={ref}
             type="file"
             name="factureUrl"
             onChange={fileHandler}
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button className="addfacture" type="submit" onClick={handleSubmit}>
           {factureStatus.create === "loading" ? (
             <span>loading</span>
           ) : (

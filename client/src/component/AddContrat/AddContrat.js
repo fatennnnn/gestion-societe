@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { addContrat } from "../../features/contrats";
-
+import "./AddContrat.css";
 const AddContrat = ({ userId }) => {
   const ref = React.useRef();
   const clearPdf = () => {
@@ -38,12 +38,13 @@ const AddContrat = ({ userId }) => {
     setValues({ ...values, contratUrl: e.target.files[0] });
   };
   return (
-    <div>
+    <div className="contliste">
       <h2>Ajouter Contrat</h2>
       <form>
-        <div>
+        <div className="contratliste__contrat">
           <h5>Nom de contrat</h5>
           <input
+            className="input__form valid_input"
             type="text"
             name="nomcontrat"
             value={nomcontrat}
@@ -52,13 +53,14 @@ const AddContrat = ({ userId }) => {
           <h5>contrat URL</h5>
 
           <input
+            className="input__form valid_input"
             ref={ref}
             type="file"
             name="contratUrl"
             onChange={fileHandler}
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button className="addcontrat" type="submit" onClick={handleSubmit}>
           {contratStatus.create === "loading" ? (
             <span>loading</span>
           ) : (

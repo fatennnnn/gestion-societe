@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { ImSpinner9 } from "react-icons/im";
 import { IconContext } from "react-icons";
 import { addFicheDePaie } from "../../features/fichedePaies";
-
+import "./AddFicheDePaie.css";
 const AddFicheDePaie = ({ userId }) => {
   const ref = React.useRef();
   const clearPdf = () => {
@@ -61,13 +61,14 @@ const AddFicheDePaie = ({ userId }) => {
     setValues({ ...values, fichedePaieUrl: e.target.files[0] });
   };
   return (
-    <div>
+    <div className="fichelist">
       <h2>Ajouter Fiche de paie</h2>
       <form>
-        <div>
+        <div className="fichelist__fiche">
           <h5>NOM Fiche</h5>
           <input
             // type="text"
+            className="input__form valid_input"
             type="month"
             name="nomFichedePaie"
             value={nomFichedePaie}
@@ -81,13 +82,14 @@ const AddFicheDePaie = ({ userId }) => {
             onChange={handleChange}
           /> */}
           <input
+            className="input__form valid_input"
             ref={ref}
             type="file"
             name="factureUrl"
             onChange={fileHandler}
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button className="addfiche" type="submit" onClick={handleSubmit}>
           {fichedePaieStatus.create === "loading" ? (
             <span>loading</span>
           ) : (

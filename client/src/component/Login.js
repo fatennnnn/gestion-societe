@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { login } from "../features/auth";
 import { Link, Redirect } from "react-router-dom";
+import "./Login.css";
 const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -21,34 +22,48 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form>
-        <label>
-          Email:
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Mot de passe:
-          <input
-            type="text"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-        <input type="submit" value="Envoyer" onClick={handleSubmit} />
-      </form>
-      <p>
-        Vous n'avez pas de compte?
-        <Link to="/sign-up">
-          <span> S'identifier</span>
-        </Link>
-      </p>
+    <div className="signin">
+      <h1>Mon Compte</h1>
+
+      <div className="signin__container">
+        <h1>Connexion</h1>
+        <form>
+          <div className="signin__form__group">
+            <h5>Email</h5>
+            <input
+              className="signin__container__form__input valid__input"
+              type="text"
+              name="email"
+              value={email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="signin__form__group">
+            <h5>Mot de passe</h5>
+            <input
+              className="signin__container__form__input valid__input"
+              type="text"
+              name="password"
+              value={password}
+              onChange={handleChange}
+            />
+          </div>
+          <button
+            type="submit"
+            // value="Envoyer"
+            className="signin__signInButton"
+            onClick={handleSubmit}
+          >
+            Envoyer
+          </button>
+        </form>
+        <p>
+          Vous n'avez pas de compte?
+          <Link className="signup" to="/sign-up">
+            <span> S'identifier</span>
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

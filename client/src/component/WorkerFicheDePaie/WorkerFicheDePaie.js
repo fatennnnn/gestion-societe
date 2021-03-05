@@ -5,7 +5,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 
 import { getFicheDePaie, deleteFicheDePaie } from "../../features/fichedePaies";
 import AddFicheDePaie from "../AddFicheDePaie/AddFicheDePaie";
-
+import "./WorkerFicheDePaie.css";
 const WorkerFicheDePaie = () => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   const [values, setValues] = useState({
@@ -42,16 +42,16 @@ const WorkerFicheDePaie = () => {
   //   return da.slice(0, 2) + "/" + da.slice(2);
   // };
   return (
-    <div>
-      <h2>liste FICHE DE PAIE :{worker.email} </h2>
+    <div className="worker__fiche__admin">
+      <h2>Fiche de paie :{worker.email} </h2>
       <AddFicheDePaie userId={worker._id} />
       {fichedePaieStatus.getAll === "loading" ? (
         <span>loading</span>
       ) : fichedePaieStatus.getAll == "succeded" ? (
         fichedePaie.map((item) => (
-          <div key={item._id}>
-            <span>{item.nomFichedePaie}</span>
-            <div style={{ width: 600 }}>
+          <div className="worker_list_fiche" key={item._id}>
+            <h4>{item.nomFichedePaie}</h4>
+            <div className="affiche_fiche" style={{ width: 300 }}>
               <Document
                 // style={{ width: 600 }}
                 file={`../${item.fichedePaieUrl}`}
@@ -61,11 +61,16 @@ const WorkerFicheDePaie = () => {
               </Document>
             </div>
             {/* console.log("id",{item._id}) */}
-            <button onClick={() => handleClick(item._id)}>supprimer</button>
+            <button
+              className="delete_fiche"
+              onClick={() => handleClick(item._id)}
+            >
+              Supprimer
+            </button>
           </div>
         ))
       ) : (
-        <span>error</span>
+        <h4>error</h4>
       )}
     </div>
   );

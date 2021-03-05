@@ -1,0 +1,35 @@
+.menu-icon {
+  color: #23a455;
+  font-size: 2.5rem;
+  align-items: center;
+  padding-top: 10 px;
+}
+.telephone {
+  color: #4054b2;
+  margin-top: 10px;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.contact {
+  text-align: center;
+  border-style: solid;
+  border-color: #6ec1e4;
+  box-shadow: 0px 0px 46px 0px rgb(48 196 78 / 65%);
+  margin-left: 200px;
+  margin-right: 200px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.email {
+  text-decoration: none;
+  color: #b24050;
+  font-weight: 700;
+}
+.title {
+  color: #23a455;
+}
+.title-contact {
+  color: #4054b2;
+}

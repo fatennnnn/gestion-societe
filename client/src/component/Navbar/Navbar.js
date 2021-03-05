@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 
 import { logout } from "../../features/auth";
 import { useSelector, useDispatch } from "react-redux";
-import Login from "../Login";
-
+import { HiMenu } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
+import { IconContext } from "react-icons";
+import "./Navbar.css";
 const Navbar = () => {
   const dispatch = useDispatch();
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
   const { isAuthenticated, user } = useSelector((state) => state.auth);
 
   const handleLog = () => {
@@ -14,79 +19,122 @@ const Navbar = () => {
   };
   const adminMenu = (
     <Fragment>
-      <Link to="/admin-section/facturation">
-        <span>facturation</span>
-      </Link>
-      <Link to="/admin-section/contrat-bondecommande">
-        <span>contrat-bondecommande</span>
-      </Link>
-      <Link to="/admin-section/gestion-des-payes-salariées">
-        <span>gestion des payes salariées</span>
-      </Link>
-      <Link to="/admin-section/ajout-employe">
-        <span>ajout-employe</span>
-      </Link>
-      <Link to="/admin-section/chat-room">
-        <span>chat</span>
+      <div
+        className={click ? "navbar__first-menu active" : "navbar__first-menu"}
+        onClick={closeMobileMenu}
+      >
+        <Link className="navbar__link" to="/admin-section/facturation">
+          <span>facturation</span>
+        </Link>
+        <Link
+          className="navbar__link"
+          to="/admin-section/contrat-bondecommande"
+        >
+          <span>contrat-bondecommande</span>
+        </Link>
+        <Link
+          className="navbar__link"
+          to="/admin-section/gestion-des-payes-salariées"
+        >
+          <span>gestion des payes salariées</span>
+        </Link>
+        <Link className="navbar__link" to="/admin-section/ajout-employe">
+          <span>ajout-employe</span>
+        </Link>
+        <Link className="navbar__link" to="/admin-section/chat-room">
+          <span>chat</span>
+        </Link>
+      </div>
+      <Link className="navbar__link" to="/">
+        <span onClick={handleLog}>Déconnexion</span>
       </Link>
 
-      <Link to="/">
-        <span className="navbar__link" onClick={handleLog}>
-          Déconnexion
-        </span>
-      </Link>
+      <div className="navbar__second-menu ">
+        <div className="mobile-menu" onClick={handleClick}>
+          {click ? (
+            <IconContext.Provider value={{ className: "menu-icone" }}>
+              <div>
+                <AiOutlineClose />
+              </div>
+            </IconContext.Provider>
+          ) : (
+            <IconContext.Provider value={{ className: "menu-icone" }}>
+              <div>
+                <HiMenu />
+              </div>
+            </IconContext.Provider>
+          )}
+        </div>
+      </div>
     </Fragment>
   );
   const homeMenu = (
     <Fragment>
-      <Link to="/">
+      <Link className="navbar__link" to="/">
         <span>Acceuil</span>
       </Link>
-      <Link to="/contact">
-        <span>Contact</span>
-      </Link>
-      {/* <Link to="/sign-up">
-        <span>SignUp</span>
-      </Link> */}
-      <Link to="/nos-agence">
-        <span>Nos Agence</span>
-      </Link>
-      <Link to="/cgu">
-        <span>CGU</span>
-      </Link>
-      <Link to="/cgv">
-        <span>CGV</span>
-      </Link>
-      <Link to="/connexion">
-        <span>Mon compte</span>
-      </Link>
+
+      <div
+        className={click ? "navbar__first-menu active" : "navbar__first-menu"}
+        onClick={closeMobileMenu}
+      >
+        <Link className="navbar__link" to="/contact">
+          <span onClick={closeMobileMenu}>Contact</span>
+        </Link>
+
+        <Link className="navbar__link" to="/nos-agence">
+          <span onClick={closeMobileMenu}>Nos Agence</span>
+        </Link>
+        <Link className="navbar__link" to="/cgu">
+          <span onClick={closeMobileMenu}>CGU</span>
+        </Link>
+        <Link className="navbar__link" to="/cgv">
+          <span onClick={closeMobileMenu}>CGV</span>
+        </Link>
+        <Link className="navbar__link" to="/connexion">
+          <span onClick={closeMobileMenu}>Mon compte</span>
+        </Link>
+      </div>
+      <div className="navbar__second-menu ">
+        <div className="mobile-menu" onClick={handleClick}>
+          {click ? (
+            <IconContext.Provider value={{ className: "menu-icone" }}>
+              <div>
+                <AiOutlineClose />
+              </div>
+            </IconContext.Provider>
+          ) : (
+            <IconContext.Provider value={{ className: "menu-icone" }}>
+              <div>
+                <HiMenu />
+              </div>
+            </IconContext.Provider>
+          )}
+        </div>
+      </div>
     </Fragment>
   );
   const employeMenu = (
     <Fragment>
-      <Link to="/worker-section/ficheDePaie">
+      <Link className="navbar__link" to="/worker-section/ficheDePaie">
         <span>Fiche de paie</span>
       </Link>
 
-      <Link to="/">
-        <span className="navbar__link" onClick={handleLog}>
-          Déconnexion
-        </span>
+      <Link className="navbar__link" to="/">
+        <span onClick={handleLog}>Déconnexion</span>
       </Link>
     </Fragment>
   );
   const userMenu = (
     <Fragment>
-      <Link to="/user-section/Contrat">
+      <Link className="navbar__link" to="/user-section/Contrat">
         <span>Contrat</span>
       </Link>
-      <Link to="/user-section/BonDeCommande">
+      <Link className="navbar__link" to="/user-section/BonDeCommande">
         <span>Bon de Commande</span>
       </Link>
-      <Link to="/">
-        <span className="navbar__link" onClick={handleLog}>
-          Déconnexion
-        </span>
+      <Link className="navbar__link" to="/">
+        <span onClick={handleLog}>Déconnexion</span>
       </Link>
     </Fragment>
   );

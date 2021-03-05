@@ -1,0 +1,33 @@
+.worker__fiche__admin > h2 {
+  color: #b24050;
+}
+.worker_list_fiche {
+  display: flex;
+  position: relative;
+  /* border: 1px solid red; */
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.worker_list_fiche > h4 {
+  /* margin-bottom: 5px; */
+  font-weight: 700;
+  color: #4054b2;
+  font-size: larger;
+}
+.delete_fiche {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background-color: #23a455;
+  color: white;
+  cursor: pointer;
+}
+.affiche_fiche {
+  border: 2px solid #56a73857;
+}
+.delete_fiche:hover {
+  background-color: #61ce70;
+  color: #b24050;
+  font-weight: 700;
+}

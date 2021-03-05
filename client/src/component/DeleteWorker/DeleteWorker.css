@@ -1,0 +1,71 @@
+.workerlist {
+  margin-top: 20px;
+  width: 100%;
+  padding: 5px;
+  /* border: 1px solid red; */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.workerlist > h3 {
+  color: #4054b2;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.worker__item {
+  /* border: 1px solid blue; */
+  border-bottom: 1px solid #56a73857;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.worker__item > h5 {
+  color: #6ec1e4;
+  font-weight: 400;
+}
+.worker__item > span {
+  color: #6ec1e4;
+
+  text-transform: capitalize;
+}
+.deleteworker {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background-color: #23a455;
+  color: white;
+  cursor: pointer;
+}
+.deleteworker:hover {
+  background-color: #61ce70;
+  color: #b24050;
+  font-weight: 700;
+}
+
+@media (min-width: 480px) {
+  .workerlist {
+    /* background-color: green; */
+  }
+}
+
+@media (min-width: 768px) {
+  .workerlist {
+    /* background-color: blue; */
+  }
+}
+
+@media (min-width: 1024px) {
+  .workerlist {
+    width: 50%;
+    /* background-color: purple; */
+  }
+}
+
+@media (min-width: 1280px) {
+  .workerlist {
+    /* background-color: orange; */
+  }
+}

@@ -1,0 +1,136 @@
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  padding: 15px 10px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: 0.5s;
+  background-color: #4054b2;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.514), 0 0px 20px 0 rgba(0, 0, 0, 0.548);
+  /* border: 1px solid red; */
+}
+
+.navbar__first-menu {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  /* border: 1px solid yellowgreen; */
+  position: absolute;
+  top: 66px;
+  left: -100%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navbar__first-menu.active {
+  background: #4054b2;
+
+  left: 0;
+  opacity: 1;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.navbar__second-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+}
+.navbar__link {
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 10px;
+  transition: 0.5s;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  width: 240px;
+  height: auto;
+}
+.navbar__link:hover {
+  background-color: #bf9f00;
+}
+.navbar__link--logo {
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+.navbar__link__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* .active {
+  color: #c42012;
+} */
+
+.mobile-menu {
+  display: block;
+  transition: 0.5s;
+}
+.menu-icone {
+  color: white;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.menu-icone:active {
+  animation: rotation 0.5s 1 linear;
+}
+
+@media (min-width: 480px) {
+  .navbar {
+    padding: 20px;
+  }
+  .navbar__first-menu {
+    top: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+  .navbar__first-menu {
+    position: static;
+    padding-left: 30px;
+    width: 700px;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: 1;
+    height: auto;
+  }
+  .navbar__second-menu {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar__first-menu {
+    position: static;
+    width: 1000px;
+    flex-direction: row;
+    justify-content: space-around;
+    opacity: 1;
+    height: auto;
+    /* padding: 15px 10px; */
+
+    background-color: orange;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navbar {
+    /* background-color: orange; */
+  }
+}

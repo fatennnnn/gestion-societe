@@ -18,7 +18,7 @@ import {
   deleteBonCommande,
   downloadFile,
 } from "../../features/bonCommandes";
-
+import "./UserBonCommandeList.css";
 // var FileSaver = require("file-saver");
 
 const UserBonCommandeList = () => {
@@ -49,7 +49,12 @@ const UserBonCommandeList = () => {
       file={`../${item.bonCommandeUrl}`}
       onLoadSuccess={onDocumentLoadSuccess}
     >
-      <Page pageNumber={pageNumber} width={300} height={200} />
+      <Page
+        className="user__boncommande__list__pdf--color"
+        pageNumber={pageNumber}
+        width={200}
+        height={200}
+      />
     </Document>
   );
   // const FileDownloader = () => {
@@ -60,16 +65,16 @@ const UserBonCommandeList = () => {
     dispatch(downloadFile({ path, mimetype: "application/pdf" }));
   };
   return (
-    <div>
+    <div className="user__boncommande">
       <h2>liste Bon Commande :{user.nom} </h2>
 
       {bonCommandeStatus.getAll === "loading" ? (
         <span>loading</span>
       ) : bonCommandeStatus.getAll == "succeded" ? (
         bonCommande.map((item) => (
-          <div key={item._id}>
-            <span>{item.nombonCommande}</span>
-            <div style={{ width: 600 }}>{myDoc(item)}</div>
+          <div className="user__boncommande__list" key={item._id}>
+            <h4>{item.nombonCommande}</h4>
+            <div className="user__boncommande__list__pdf">{myDoc(item)}</div>
             {/* 
             <button onClick={() => download(`../${item.contratUrl}`)}>
               telecharger
@@ -80,10 +85,20 @@ const UserBonCommandeList = () => {
             >
               Download
             </a> */}
-            <button onClick={() => handleClick(item._id)}>supprimer</button>
-            <button onClick={() => handleDownload(item.bonCommandeUrl)}>
-              telecharger
-            </button>
+            <div className="user__boncommande__button">
+              <button
+                className="user__boncommande__delete"
+                onClick={() => handleClick(item._id)}
+              >
+                supprimer
+              </button>
+              <button
+                className="user__boncommande__delete"
+                onClick={() => handleDownload(item.bonCommandeUrl)}
+              >
+                telecharger
+              </button>
+            </div>
           </div>
         ))
       ) : (

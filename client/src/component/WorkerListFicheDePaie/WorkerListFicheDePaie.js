@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { getAllWorkers } from "../../features/adminWorker";
-
+import "./WorkerListFicheDePaie.css";
 const WorkerListFicheDePaie = () => {
   const dispatch = useDispatch();
 
@@ -17,34 +17,35 @@ const WorkerListFicheDePaie = () => {
     (state) => state.adminWorker
   );
   return (
-    <div>
-      {/* <h2>Listes des employés </h2> */}
+    <div className="worker__list__fiche">
+      <h2>Gestion employés </h2>
 
       {workerStatut.getAll === "loading" ? (
-        <span>loading</span>
+        <span className="error">loading</span>
       ) : workerStatut.getAll === "failed" ? (
-        <h3>quelque chose s'est mal passe</h3>
+        <span className="error">quelque chose s'est mal passé</span>
       ) : workerStatut.getAll === "succeded" && workers.length > 0 ? (
         workers && workers.length > 0 ? (
           workers.map((worker) => (
-            <div key={worker._id}>
-              <h3>l' employé</h3>
-              <h2>{worker.email}</h2>
+            <div className="workerlist__fiche" key={worker._id}>
+              <h5>l' employé:</h5>
+              <h5>{worker.email}</h5>
               <Link
+                className="link__fiche__admin"
                 to={{
                   pathname: "/admin-section/employé-fiche",
                   state: { worker },
                 }}
               >
-                <span>view fiche de paie </span>
+                <h5>view fiche de paie </h5>
               </Link>
             </div>
           ))
         ) : (
-          <h3>il n'y a pas employés </h3>
+          <h3>Il n'y a pas employés </h3>
         )
       ) : (
-        <h3>pas d'employés</h3>
+        <h3>Il n'y a pas employés</h3>
       )}
     </div>
   );

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Document, Page, pdfjs } from "react-pdf";
 
 import { getFicheDePaie, downloadFile } from "../../features/fichedePaies";
-
+import "./GetFichedePaieUser.css";
 const GetFichedePaieUser = () => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   const [values, setValues] = useState({
@@ -33,30 +33,33 @@ const GetFichedePaieUser = () => {
     dispatch(downloadFile({ path, mimetype: "application/pdf" }));
   };
   return (
-    <div>
+    <div className="user__facture">
       <h2>liste FICHE DE PAIE </h2>
       {fichedePaieStatus.getAll === "loading" ? (
         <span>loading</span>
       ) : fichedePaieStatus.getAll == "succeded" ? (
         fichedePaie.map((item) => (
-          <div key={item._id}>
-            <span>{item.nomFichedePaie}</span>
-            <div style={{ width: 600 }}>
+          <div className="user__facture__list" key={item._id}>
+            <h4>{item.nomFichedePaie}</h4>
+            <div className="user__facture__list__pdf">
               <Document
                 // style={{ width: 600 }}
                 file={`../${item.fichedePaieUrl}`}
                 onLoadSuccess={onDocumentLoadSuccess}
               >
-                <Page pageNumber={pageNumber} width={300} height={200} />
+                <Page pageNumber={pageNumber} width={200} height={200} />
               </Document>
             </div>
-            <button onClick={() => handleDownload(item.fichedePaieUrl)}>
+            <button
+              className="user__facture__download"
+              onClick={() => handleDownload(item.fichedePaieUrl)}
+            >
               telecharger
             </button>
           </div>
         ))
       ) : (
-        <span>error</span>
+        <h4>error</h4>
       )}
     </div>
   );

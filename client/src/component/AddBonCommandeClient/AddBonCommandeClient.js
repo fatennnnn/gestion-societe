@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addBonCommande } from "../../features/bonCommandes";
+import "./AddBonCommandeClient.css";
 const AddBonCommandeClient = ({ userId }) => {
   const ref = React.useRef();
   const clearPdf = () => {
@@ -36,12 +37,13 @@ const AddBonCommandeClient = ({ userId }) => {
     setValues({ ...values, bonCommandeUrl: e.target.files[0] });
   };
   return (
-    <div>
+    <div className="boncommandeliste">
       <h2>Ajouter Bon de Commande</h2>
       <form>
-        <div>
+        <div className="boncommandeliste__boncommande">
           <h5>Nom de bon Commande</h5>
           <input
+            className="input__form valid_input"
             type="text"
             name="nombonCommande"
             value={nombonCommande}
@@ -50,13 +52,14 @@ const AddBonCommandeClient = ({ userId }) => {
           <h5>bon Commande URL</h5>
 
           <input
+            className="input__form valid_input"
             ref={ref}
             type="file"
             name="bonCommandeUrl"
             onChange={fileHandler}
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button className="addboncommande" type="submit" onClick={handleSubmit}>
           {bonCommandeStatus.create === "loading" ? (
             <span>loading</span>
           ) : (

@@ -9,6 +9,7 @@ import {
   deleteFacture,
 } from "../../features/factures";
 import AddFacture from "../../component/AddFacture/AddFacture";
+import "./UserFactList.css";
 const UserFactList = () => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   const [values, setValues] = useState({
@@ -32,31 +33,40 @@ const UserFactList = () => {
     setValues({ ...values, numPages });
   };
   return (
-    <div>
+    <div className="user__facture">
       <h2>liste facture :{user.nom} </h2>
       <AddFacture userId={user._id} />
       {factureStatus.getFactId === "loading" ? (
         <span>loading</span>
       ) : factureStatus.getFactId == "succeded" ? (
         facture.map((item) => (
-          <div key={item._id}>
-            hello
-            <span>{item.nomfacture}</span>
-            <div style={{ width: 600 }}>
+          <div className="user__facture__list" key={item._id}>
+            <h4>{item.nomfacture}</h4>
+            <div className="user__facture__list__pdf">
               <Document
                 // style={{ width: 600 }}
                 file={`../${item.factureUrl}`}
                 onLoadSuccess={onDocumentLoadSuccess}
               >
-                <Page pageNumber={pageNumber} width={300} height={200} />
+                <Page
+                  className="user__facture__list__pdf--color"
+                  pageNumber={pageNumber}
+                  width={200}
+                  height={200}
+                />
               </Document>
             </div>
-            console.log("id",{item._id})
-            <button onClick={() => handleClick(item._id)}>supprimer</button>
+            {/* console.log("id",{item._id}) */}
+            <button
+              className="user__facture__delete"
+              onClick={() => handleClick(item._id)}
+            >
+              supprimer
+            </button>
           </div>
         ))
       ) : (
-        <span>error</span>
+        <h4>error</h4>
       )}
     </div>
   );

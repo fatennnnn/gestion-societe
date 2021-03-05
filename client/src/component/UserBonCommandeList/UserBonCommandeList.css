@@ -1,0 +1,89 @@
+.user__boncommande > h2 {
+  color: #b24050;
+  padding-top: 120px;
+}
+.user__boncommande__list {
+  display: flex;
+  position: relative;
+  /* border: 1px solid red; */
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.user__boncommande__list > h4 {
+  /* margin-bottom: 5px; */
+  font-weight: 700;
+  color: #4054b2;
+  font-size: small;
+  width: 100px;
+
+  /* font-size: larger; */
+}
+.user__boncommande__list__pdf {
+  width: 200px;
+  /* height: 200px; */
+  border: 2px solid #56a73857;
+  /* border: 2px solid blue; */
+}
+.user__boncommande__button {
+  display: flex;
+  flex-direction: column;
+}
+.user__boncommande__delete {
+  border: none;
+  outline: none;
+  /* width: 100px;
+  height: 40px; */
+  padding: 5px 20px;
+  background-color: #23a455;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.user__boncommande__delete:hover {
+  background-color: #61ce70;
+  color: #b24050;
+  font-weight: 700;
+}
+/* .user__contrat__list__pdf--color { */
+/* width={200} */
+/* width: 200px;
+  height: 200px; */
+/* border: 2px solid #56a73857; */
+/* border: 2px solid green;
+  height: 300; }*/
+
+@media (min-width: 480px) {
+}
+
+@media (min-width: 768px) {
+  .user__boncommande__delete {
+    padding: 12px 20px;
+  }
+  .user__boncommande__list > h4 {
+    font-weight: 700;
+
+    font-size: larger;
+  }
+
+  /* .user__contrat__list {
+    background-color: yellow;
+  }
+  .user__contrat__list__pdf {
+    width: px;
+  }
+  .user__contrat__list__pdf--color {
+    /* width={200} 
+    width: 300px;
+    /* height: 200px; 
+    /* border: 2px solid #56a73857; 
+    border: 2px solid orange;
+    height: 300;
+  } */
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1280px) {
+}

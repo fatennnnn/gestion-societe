@@ -1,0 +1,50 @@
+.contliste {
+  /* border: 1px solid red; */
+  width: auto;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.contliste > h2 {
+  color: #4054b2;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.contratliste__contrat {
+  position: relative;
+}
+.contratliste__contrat > h5 {
+  margin-bottom: 5px;
+  font-weight: 400;
+  color: #4054b2;
+  font-size: larger;
+}
+.input__form {
+  /* border-color: #6ec1e4; */
+  /* border-radius: 10px; */
+  width: 20%;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+}
+.valid_input {
+  border-bottom: 1px solid #56a73857;
+  background-color: white;
+}
+.addcontrat {
+  background: #23a455;
+  width: 20%;
+  height: 40px;
+  font-size: 0.9rem;
+  border: none;
+  margin-top: 40px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+.addcontrat:hover {
+  background: #61ce70;
+  color: #b24050;
+  font-weight: 700;
+}

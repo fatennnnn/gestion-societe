@@ -15,6 +15,8 @@ import WorkerSection from "./pages/WorkerSection/WorkerSection";
 import UserSection from "./pages/UserSection/UserSection";
 import PrivateRoute from "./component/PrivateRoute";
 import SignUp from "./component/SignUp/SignUp";
+import Home from "./pages/Home/Home";
+import Contact from "./component/Contact/Contact";
 function App() {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -24,6 +26,12 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
           <Route exact path="/connexion">
             <Login />
           </Route>

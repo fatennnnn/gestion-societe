@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllWorkers } from "../../features/adminWorker";
 import AddWorker from "../AddWorker/AddWorker";
 import DeleteWorker from "../DeleteWorker/DeleteWorker";
+import "./WorkerList.css";
 const WorkerList = () => {
   const dispatch = useDispatch();
 
@@ -18,7 +19,7 @@ const WorkerList = () => {
   );
 
   return (
-    <div>
+    <div className="worker">
       <AddWorker />
       {/* <h2>Listes des employés </h2> */}
 

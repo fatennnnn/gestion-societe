@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ImSpinner9 } from "react-icons/im";
 import { IconContext } from "react-icons";
 // import UserFactList from "../UserFactList/"
-
+import "./UserList.css";
 const UserList = () => {
   //   const dispactch = useDispatch();
   const dispatch = useDispatch();
@@ -20,8 +20,8 @@ const UserList = () => {
     (state) => state.admin
   );
   return (
-    <div>
-      <h2>List Client</h2>
+    <div className="list__facture">
+      <h2>List Client: facturation</h2>
 
       {adminStatus.getAll === "loading" ? (
         <IconContext.Provider value={{ className: "spinner--large" }}>
@@ -34,10 +34,11 @@ const UserList = () => {
       ) : adminStatus.getAll === "succeded" && users.length > 0 ? (
         users && users.length > 0 ? (
           users.map((user) => (
-            <div key={user._id}>
-              <span>{user.nom}</span>
-              <span>{user.prenom}</span>
+            <div className="user____facture" key={user._id}>
+              <h5>{user.nom}</h5>
+              <h5>{user.prenom}</h5>
               <Link
+                className="linkfacture"
                 to={{
                   pathname: "/admin-section/user-facts",
                   state: { user },
