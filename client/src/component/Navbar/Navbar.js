@@ -78,20 +78,20 @@ const Navbar = () => {
         className={click ? "navbar__first-menu active" : "navbar__first-menu"}
         onClick={closeMobileMenu}
       >
-        <Link className="navbar__link" to="/contact">
+        <Link className="navbar__link navbar__link--mobile" to="/contact">
           <span onClick={closeMobileMenu}>Contact</span>
         </Link>
 
-        <Link className="navbar__link" to="/nos-agence">
+        <Link className="navbar__link navbar__link--mobile" to="/nos-agence">
           <span onClick={closeMobileMenu}>Nos Agence</span>
         </Link>
-        <Link className="navbar__link" to="/cgu">
+        <Link className="navbar__link navbar__link--mobile" to="/cgu">
           <span onClick={closeMobileMenu}>CGU</span>
         </Link>
-        <Link className="navbar__link" to="/cgv">
+        <Link className="navbar__link navbar__link--mobile" to="/cgv">
           <span onClick={closeMobileMenu}>CGV</span>
         </Link>
-        <Link className="navbar__link" to="/connexion">
+        <Link className="navbar__link navbar__link--mobile" to="/connexion">
           <span onClick={closeMobileMenu}>Mon compte</span>
         </Link>
       </div>

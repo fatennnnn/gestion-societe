@@ -17,6 +17,7 @@ import PrivateRoute from "./component/PrivateRoute";
 import SignUp from "./component/SignUp/SignUp";
 import Home from "./pages/Home/Home";
 import Contact from "./component/Contact/Contact";
+import Aceuil from "./component/Aceuil/Aceuil";
 function App() {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -27,7 +28,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Aceuil />
           </Route>
           <Route exact path="/contact">
             <Contact />
