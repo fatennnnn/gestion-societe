@@ -2,43 +2,83 @@
   /* margin-top: 100px; */
   padding-top: 100px;
   width: 100%;
-  margin-left: 25px;
-  margin-right: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
   font-weight: 400;
   margin-bottom: 40px;
   text-align: center;
+
+  /* text-align: center; */
+  /* border: 1px solid yellow; */
 }
-.user____facture {
+.user__facture {
   margin-right: 30px;
   margin-left: 30px;
-  border-bottom: 1px solid #56a73857;
-
+  padding: 12px 0;
+  border: 1px solid var(--border-color);
+  margin-top: 15px;
   display: flex;
-
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
-.user____facture > h5 {
-  color: #6ec1e4;
+.user__facture__name {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.user__facture__name > h5 {
+  color: var(--text-name);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  margin-bottom: 10px;
 }
 .list__facture > h2 {
-  color: #4054b2;
-  font-size: x-large;
+  color: var(--primary-color);
+  font-size: 2rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
+.linkfacture {
+  /* color: #6ec1e4; */
+  color: var(--link-color);
+  text-decoration: none;
+}
+.linkfacture:hover {
+  color: var(--hover-color);
+}
+@media (min-width: 480px) {
+  .list__facture {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  .list__facture {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .user__facture {
+    /* display: flex; */
+    flex-direction: row;
+    margin: 10px 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  .user__facture__name > h5 {
+    margin-bottom: 0;
+  }
+}
+
 @media (min-width: 1024px) {
   .list__facture {
     width: 50%;
     margin: 0 auto;
-
-    /* background-color: purple; */
   }
 }
-.linkfacture {
-  /* color: #6ec1e4; */
-  color: #23a455;
-  text-decoration: none;
-}
-.linkfacture:hover {
-  color: #b24050;
+@media (min-width: 1280px) {
 }

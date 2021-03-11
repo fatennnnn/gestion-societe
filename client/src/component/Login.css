@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-light);
+  border: 1px solid red;
 }
 .signin > h1 {
   color: #b24050;
@@ -12,9 +12,8 @@
 
 .signin__container {
   background-color: white;
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+
   width: 300px;
-  /* height: 400px; */
   display: flex;
   flex-direction: column;
   padding: 20px 50px 30px;
@@ -39,13 +38,6 @@
   /* font-weight: 200; */
   color: #1b2431;
 }
-/* .signin__form__group > span {
-  position: absolute;
-  right: 10px;
-  bottom: 0;
-  color: #c42012;
-  font-size: 0.8rem;
-} */
 
 .signin__container__form__input {
   height: 20px;

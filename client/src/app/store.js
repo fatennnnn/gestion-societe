@@ -6,7 +6,7 @@ import adminWorkerReducer from "../features/adminWorker";
 import bonCommandesReducer from "../features/bonCommandes";
 import contratsReducer from "../features/contrats";
 import fichedePaiesReducer from "../features/fichedePaies";
-
+import adminEmployeReducer from "../features/adminEmploye";
 export default configureStore({
   middleware: getDefaultMiddleware({
     serializableCheck: false,
@@ -27,5 +27,6 @@ export default configureStore({
     bonCommandes: bonCommandesReducer,
     contrats: contratsReducer,
     fichedePaies: fichedePaiesReducer,
+    adminEmploye: adminEmployeReducer,
   },
 });

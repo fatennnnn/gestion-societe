@@ -1,50 +1,83 @@
 .boncommandeliste {
-  /* border: 1px solid red; */
-  width: auto;
+  margin-top: 20px;
+  width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;
-}
-.boncommandeliste > h2 {
-  color: #4054b2;
-  font-weight: 700;
-  margin-bottom: 30px;
   text-align: center;
 }
-.boncommandeliste__boncommande {
+.boncommandeliste > h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+  /* text-align: center; */
+}
+/* .boncommandeliste__boncommande {
   position: relative;
-}
-.boncommande__facture > h5 {
-  margin-bottom: 5px;
+} */
+.boncommandeliste__boncommande > h5 {
+  padding: 10px 30px;
+  margin-bottom: 10px;
   font-weight: 400;
-  color: #4054b2;
-  font-size: larger;
+  color: var(--primary-color);
+  font-size: 1rem;
 }
-.input__form {
-  /* border-color: #6ec1e4; */
-  /* border-radius: 10px; */
-  width: 20%;
+.input__form__bonde {
+  width: 70%;
   margin-bottom: 10px;
   border: none;
   outline: none;
-}
-.valid_input {
-  border-bottom: 1px solid #56a73857;
+  border-bottom: 1px solid var(--border-color);
   background-color: white;
 }
+
 .addboncommande {
-  background-color: #23a455;
-  width: 20%;
+  background-color: var(--secondary-color);
+  width: 70%;
   height: 40px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border: none;
   margin-top: 40px;
   color: white;
   outline: none;
   cursor: pointer;
 }
-.addboncommande :hover {
+/* .addboncommande :hover {
   background-color: #61ce70;
   color: #b24050;
   font-weight: 700;
+} */
+@media (min-width: 480px) {
+  .input__form__bonde {
+    width: 50%;
+  }
+  .addboncommande {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .input__form__bonde {
+    width: 40%;
+  }
+  .addboncommande {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .input__form__bonde {
+    width: 35%;
+  }
+  .addboncommande {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .input__form__bonde {
+    width: 30%;
+  }
+  .addboncommande {
+    width: 30%;
+  }
 }

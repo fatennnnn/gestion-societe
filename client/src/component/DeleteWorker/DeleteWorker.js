@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import AddInformation from "../AddInformation/AddInformation";
 
 import { deleteWorker } from "../../features/adminWorker";
 import "./DeleteWorker.css";
@@ -24,6 +25,7 @@ const DeleteWorker = ({ workers }) => {
             >
               supprimer
             </button>
+            <AddInformation user={worker._id} />
           </div>
         ))
       ) : (

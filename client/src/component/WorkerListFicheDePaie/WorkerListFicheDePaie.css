@@ -1,37 +1,41 @@
 .worker__list__fiche {
-  width: 100%;
-  /* border: 1px solid red; */
   padding-top: 100px;
-  padding-bottom: 50px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;*/
-  /* align-items: center; */
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-align: center;
 }
 .worker__list__fiche > h2 {
-  color: #4054b2;
-  font-size: x-large;
+  color: var(--primary-color);
+  font-size: 2rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
 .workerlist__fiche {
   margin-right: 30px;
   margin-left: 30px;
-  border-bottom: 1px solid #56a73857;
-
+  padding: 12px 0;
+  border: 1px solid var(--border-color);
+  margin-top: 15px;
   display: flex;
-
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  color: #6ec1e4;
+}
+.workerlist__fiche > h5 {
+  color: var(--text-name);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  margin-bottom: 10px;
 }
 .link__fiche__admin {
-  /* color: #23a455; */
-  color: #6ec1e4;
-
+  color: var(--link-color);
   text-decoration: none;
 }
 .link__fiche__admin:hover {
-  color: #b24050;
+  color: var(--hover-color);
 }
 .error {
   color: #56a73857;

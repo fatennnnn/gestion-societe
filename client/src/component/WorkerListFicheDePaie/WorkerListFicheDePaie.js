@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
 import { getAllWorkers } from "../../features/adminWorker";
 import "./WorkerListFicheDePaie.css";
 const WorkerListFicheDePaie = () => {
@@ -18,7 +17,7 @@ const WorkerListFicheDePaie = () => {
   );
   return (
     <div className="worker__list__fiche">
-      <h2>Gestion employés </h2>
+      <h2>Gestion des employés </h2>
 
       {workerStatut.getAll === "loading" ? (
         <span className="error">loading</span>
@@ -28,7 +27,6 @@ const WorkerListFicheDePaie = () => {
         workers && workers.length > 0 ? (
           workers.map((worker) => (
             <div className="workerlist__fiche" key={worker._id}>
-              <h5>l' employé:</h5>
               <h5>{worker.email}</h5>
               <Link
                 className="link__fiche__admin"

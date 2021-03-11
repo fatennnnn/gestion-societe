@@ -43,7 +43,7 @@ const AddBonCommandeClient = ({ userId }) => {
         <div className="boncommandeliste__boncommande">
           <h5>Nom de bon Commande</h5>
           <input
-            className="input__form valid_input"
+            className="input__form__bonde "
             type="text"
             name="nombonCommande"
             value={nombonCommande}
@@ -52,7 +52,7 @@ const AddBonCommandeClient = ({ userId }) => {
           <h5>bon Commande URL</h5>
 
           <input
-            className="input__form valid_input"
+            className="input__form__bonde "
             ref={ref}
             type="file"
             name="bonCommandeUrl"

@@ -44,7 +44,7 @@ const AddContrat = ({ userId }) => {
         <div className="contratliste__contrat">
           <h5>Nom de contrat</h5>
           <input
-            className="input__form valid_input"
+            className="input__form__contrat"
             type="text"
             name="nomcontrat"
             value={nomcontrat}
@@ -53,7 +53,7 @@ const AddContrat = ({ userId }) => {
           <h5>contrat URL</h5>
 
           <input
-            className="input__form valid_input"
+            className="input__form__contrat valid_input"
             ref={ref}
             type="file"
             name="contratUrl"

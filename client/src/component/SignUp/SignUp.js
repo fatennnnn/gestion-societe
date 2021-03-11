@@ -116,7 +116,7 @@ const SignUp = () => {
                 .msg}
           </span> */}
             <input
-              className="hubform-group-input"
+              className="hubform-group-input valid__input "
               type="text"
               name="prenom"
               value={prenom}
@@ -133,7 +133,7 @@ const SignUp = () => {
               )[0].msg}
           </span> */}
             <input
-              className="hubform-group-input"
+              className="hubform-group-input valid__input "
               type="text"
               name="numerosiret"
               value={numerosiret}

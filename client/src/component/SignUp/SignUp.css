@@ -1,19 +1,18 @@
 .mysignuppage {
-  padding-top: 50px;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: rgba(0, 0, 0, 0.431); */
+  border: 2px solid red;
 }
 .mysignuppage > h1 {
   color: #b24050;
 }
 .myrealsignuppage {
   background-color: white;
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
-  width: 400px;
-  /* height: 400px; */
+
+  width: 300px;
   display: flex;
   flex-direction: column;
   padding: 20px 50px 30px;
@@ -28,27 +27,27 @@
   font-size: 2rem;
 }
 .hubform-group {
-  display: flex;
-  flex-direction: row;
   position: relative;
-  justify-content: space-between;
-  padding-bottom: 15px;
-  align-items: baseline;
 }
 .hubform-group > h5 {
   font-weight: 700;
-  /* margin-bottom: 5px; */
-  /* font-weight: 200; */
-  color: #1b2431;
   font-size: medium;
+  margin-bottom: 5px;
+  color: #1b2431;
 }
 .hubform-group-input {
-  /* height: 30px; */
-  /* margin-bottom: 7px; */
+  margin-bottom: 20px;
+
   height: 30px;
-  width: 70%;
+  width: 98%;
   border-radius: 7px;
 }
+.valid__input {
+  border-bottom: 1px solid #1b2431;
+  background-color: white;
+  /* caret-color: #b24050; */
+}
+
 .signIn {
   color: #b24050;
   text-decoration: none;
@@ -72,4 +71,19 @@
   font-size: 12px;
   text-align: center;
   color: #1b2431;
+}
+
+@media (min-width: 480px) {
+  .myrealsignuppage {
+    width: 400px;
+    padding: 30px 50px;
+  }
+}
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1280px) {
 }

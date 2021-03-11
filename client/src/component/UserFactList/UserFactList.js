@@ -33,8 +33,8 @@ const UserFactList = () => {
     setValues({ ...values, numPages });
   };
   return (
-    <div className="user__facture">
-      <h2>liste facture :{user.nom} </h2>
+    <div className="user__fact">
+      <h2>Factures :{user.nom} </h2>
       <AddFacture userId={user._id} />
       {factureStatus.getFactId === "loading" ? (
         <span>loading</span>

@@ -1,3 +1,13 @@
+:root {
+  --bg-light: #f8f8f8;
+  --primary-color: #4054b2;
+  --secondary-color: #b5df2e;
+  --text-color: #7a7a7a;
+  --text-name: #6ec1e4;
+  --link-color: #23a455;
+  --border-color: #56a73857;
+  --hover-color: #b24050;
+}
 *,
 html,
 body {

@@ -21,7 +21,7 @@ const UserList = () => {
   );
   return (
     <div className="list__facture">
-      <h2>List Client: facturation</h2>
+      <h2>facturation</h2>
 
       {adminStatus.getAll === "loading" ? (
         <IconContext.Provider value={{ className: "spinner--large" }}>
@@ -34,18 +34,24 @@ const UserList = () => {
       ) : adminStatus.getAll === "succeded" && users.length > 0 ? (
         users && users.length > 0 ? (
           users.map((user) => (
-            <div className="user____facture" key={user._id}>
-              <h5>{user.nom}</h5>
-              <h5>{user.prenom}</h5>
-              <Link
-                className="linkfacture"
-                to={{
-                  pathname: "/admin-section/user-facts",
-                  state: { user },
-                }}
-              >
-                <span>view facts</span>
-              </Link>
+            <div className="user__facture" key={user._id}>
+              <div className="user__facture__name">
+                <h5>
+                  {user.nom} {user.prenom}
+                </h5>
+                {/* <h5></h5> */}
+              </div>
+              <div>
+                <Link
+                  className="linkfacture"
+                  to={{
+                    pathname: "/admin-section/user-facts",
+                    state: { user },
+                  }}
+                >
+                  <span>view facts</span>
+                </Link>
+              </div>
             </div>
           ))
         ) : (

@@ -8,7 +8,7 @@ const utilisateur = require("./routes/user");
 const facture = require("./routes/facture");
 const workerRoutes = require("./routes/worker");
 const ficheDePaie = require("./routes/ficheDePaie");
-
+const employe = require("./routes/employe");
 const multer = require("multer");
 const app = express();
 const path = require("path");
@@ -64,7 +64,7 @@ app.use("/auth", authRoutes);
 app.use("/facture", facture);
 app.use("/worker", workerRoutes);
 app.use("/ficheDePaie", ficheDePaie);
-
+app.use("/employe", employe);
 // custom error handler
 app.use((error, req, res, next) => {
   const statusCode = error.statusCode || 500;

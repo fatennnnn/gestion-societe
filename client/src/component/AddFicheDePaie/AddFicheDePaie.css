@@ -1,50 +1,79 @@
 .fichelist {
   /* border: 1px solid red; */
+  margin-top: 20px;
+
   width: auto;
   height: 400px;
   display: flex;
   flex-direction: column;
-}
-.fichelist > h2 {
-  color: #4054b2;
-  font-weight: 700;
-  margin-bottom: 30px;
   text-align: center;
 }
-.fichelist__fiche {
+.fichelist > h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+/* .fichelist__fiche {
   position: relative;
-}
+} */
 .fichelist__fiche > h5 {
-  margin-bottom: 5px;
+  padding: 10px 30px;
+  margin-bottom: 10px;
   font-weight: 400;
-  color: #4054b2;
-  font-size: larger;
+  color: var(--primary-color);
+  font-size: 1rem;
 }
-.input__form {
-  /* border-color: #6ec1e4; */
-  /* border-radius: 10px; */
-  width: 20%;
+.input__form__fiche {
+  width: 70%;
   margin-bottom: 10px;
   border: none;
   outline: none;
-}
-.valid_input {
-  border-bottom: 1px solid #56a73857;
+  border-bottom: 1px solid var(--border-color);
   background-color: white;
 }
+
 .addfiche {
-  background: #23a455;
-  width: 20%;
+  background-color: var(--secondary-color);
+  width: 70%;
   height: 40px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border: none;
   margin-top: 40px;
   color: white;
   outline: none;
   cursor: pointer;
 }
-.addfiche:hover {
-  background-color: #61ce70;
-  color: #b24050;
-  font-weight: 700;
+@media (min-width: 480px) {
+  .input__form__fiche {
+    width: 50%;
+  }
+  .addfiche {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .input__form__fiche {
+    width: 40%;
+  }
+  .addfiche {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .input__form__fiche {
+    width: 35%;
+  }
+  .addfiche {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .input__form__fiche {
+    width: 30%;
+  }
+  .addfiche {
+    width: 30%;
+  }
 }

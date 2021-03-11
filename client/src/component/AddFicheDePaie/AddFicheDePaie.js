@@ -68,7 +68,7 @@ const AddFicheDePaie = ({ userId }) => {
           <h5>NOM Fiche</h5>
           <input
             // type="text"
-            className="input__form valid_input"
+            className="input__form__fiche valid_input"
             type="month"
             name="nomFichedePaie"
             value={nomFichedePaie}
@@ -82,7 +82,7 @@ const AddFicheDePaie = ({ userId }) => {
             onChange={handleChange}
           /> */}
           <input
-            className="input__form valid_input"
+            className="input__form__fiche valid_input"
             ref={ref}
             type="file"
             name="factureUrl"

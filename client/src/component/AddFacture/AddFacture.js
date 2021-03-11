@@ -46,18 +46,18 @@ const AddFacture = ({ userId }) => {
       <h2>Ajouter Facture</h2>
       <form>
         <div className="factureliste__facture">
-          <h5>NOM Facture</h5>
+          <h5>Nom Facture</h5>
           <input
-            className="input__form valid_input"
+            className="input___form valid_input"
             type="text"
             name="nomfacture"
             value={nomfacture}
             onChange={handleChange}
           />
-          <h5> Facture URL</h5>
+          <h5>Importer Facture </h5>
 
           <input
-            className="input__form valid_input"
+            className="input___form valid_input"
             ref={ref}
             type="file"
             name="factureUrl"

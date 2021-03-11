@@ -21,7 +21,7 @@ const UserListContratCommande = () => {
   );
   return (
     <div className="list__contrat__bondecommande">
-      <h2>List Client: Contrat - Bon de commande</h2>
+      <h2>Contrat - Bon de commande</h2>
 
       {adminStatus.getAll === "loading" ? (
         <IconContext.Provider value={{ className: "spinner--large" }}>
@@ -34,27 +34,30 @@ const UserListContratCommande = () => {
       ) : adminStatus.getAll === "succeded" && users.length > 0 ? (
         users && users.length > 0 ? (
           users.map((user) => (
-            <div className="user____cont__bon" key={user._id}>
-              <h5>{user.nom}</h5>
-              <h5>{user.prenom}</h5>
-              <Link
-                className="linkcontbon"
-                to={{
-                  pathname: "/admin-section/user-bondecommande",
-                  state: { user },
-                }}
-              >
-                <span>view bon Commande </span>
-              </Link>
-              <Link
-                className="linkcontbon"
-                to={{
-                  pathname: "/admin-section/user-contrat",
-                  state: { user },
-                }}
-              >
-                <span>view Contrat </span>
-              </Link>
+            <div className="user__cont__bon" key={user._id}>
+              <h5>
+                {user.nom} {user.prenom}
+              </h5>
+              <div className="link__cont__bon">
+                <Link
+                  className="linkcontbon"
+                  to={{
+                    pathname: "/admin-section/user-bondecommande",
+                    state: { user },
+                  }}
+                >
+                  <span>view bon Commande </span>
+                </Link>
+                <Link
+                  className="linkcontbon"
+                  to={{
+                    pathname: "/admin-section/user-contrat",
+                    state: { user },
+                  }}
+                >
+                  <span>view Contrat </span>
+                </Link>
+              </div>
             </div>
           ))
         ) : (
