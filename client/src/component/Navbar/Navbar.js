@@ -1,13 +1,14 @@
 import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { logout } from "../../features/auth";
 import { useSelector, useDispatch } from "react-redux";
-import { HiMenu } from "react-icons/hi";
-import { AiOutlineClose } from "react-icons/ai";
+import { HiMenuAlt2 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import "./Navbar.css";
 const Navbar = () => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -54,13 +55,13 @@ const Navbar = () => {
           {click ? (
             <IconContext.Provider value={{ className: "menu-icone" }}>
               <div>
-                <AiOutlineClose />
+                <IoClose />
               </div>
             </IconContext.Provider>
           ) : (
             <IconContext.Provider value={{ className: "menu-icone" }}>
               <div>
-                <HiMenu />
+                <HiMenuAlt2 />
               </div>
             </IconContext.Provider>
           )}
@@ -70,28 +71,70 @@ const Navbar = () => {
   );
   const homeMenu = (
     <Fragment>
-      <Link className="navbar__link" to="/">
-        <span>Acceuil</span>
+      <Link
+        className={
+          location.pathname === "/"
+            ? "navbar__link navbar__link--active"
+            : "navbar__link"
+        }
+        to="/"
+      >
+        <span onClick={closeMobileMenu}>Acceuil</span>
       </Link>
 
       <div
         className={click ? "navbar__first-menu active" : "navbar__first-menu"}
         onClick={closeMobileMenu}
       >
-        <Link className="navbar__link navbar__link--mobile" to="/contact">
+        <Link
+          className={
+            location.pathname === "/contact"
+              ? "navbar__link navbar__link--mobile navbar__link--active"
+              : "navbar__link navbar__link--mobile"
+          }
+          to="/contact"
+        >
           <span onClick={closeMobileMenu}>Contact</span>
         </Link>
 
-        <Link className="navbar__link navbar__link--mobile" to="/nos-agence">
+        <Link
+          className={
+            location.pathname === "/nos-agence"
+              ? "navbar__link navbar__link--mobile navbar__link--active"
+              : "navbar__link navbar__link--mobile"
+          }
+          to="/nos-agence"
+        >
           <span onClick={closeMobileMenu}>Nos Agence</span>
         </Link>
-        <Link className="navbar__link navbar__link--mobile" to="/cgu">
+        <Link
+          className={
+            location.pathname === "/cgu"
+              ? "navbar__link navbar__link--mobile navbar__link--active"
+              : "navbar__link navbar__link--mobile"
+          }
+          to="/cgu"
+        >
           <span onClick={closeMobileMenu}>CGU</span>
         </Link>
-        <Link className="navbar__link navbar__link--mobile" to="/cgv">
+        <Link
+          className={
+            location.pathname === "/cgv"
+              ? "navbar__link navbar__link--mobile navbar__link--active"
+              : "navbar__link navbar__link--mobile"
+          }
+          to="/cgv"
+        >
           <span onClick={closeMobileMenu}>CGV</span>
         </Link>
-        <Link className="navbar__link navbar__link--mobile" to="/connexion">
+        <Link
+          className={
+            location.pathname === "/connexion"
+              ? "navbar__link navbar__link--mobile navbar__link--active"
+              : "navbar__link navbar__link--mobile"
+          }
+          to="/connexion"
+        >
           <span onClick={closeMobileMenu}>Mon compte</span>
         </Link>
       </div>
@@ -100,13 +143,13 @@ const Navbar = () => {
           {click ? (
             <IconContext.Provider value={{ className: "menu-icone" }}>
               <div>
-                <AiOutlineClose />
+                <IoClose />
               </div>
             </IconContext.Provider>
           ) : (
             <IconContext.Provider value={{ className: "menu-icone" }}>
               <div>
-                <HiMenu />
+                <HiMenuAlt2 />
               </div>
             </IconContext.Provider>
           )}

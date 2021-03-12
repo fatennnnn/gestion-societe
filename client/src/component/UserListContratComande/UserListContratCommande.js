@@ -24,11 +24,7 @@ const UserListContratCommande = () => {
       <h2>Contrat - Bon de commande</h2>
 
       {adminStatus.getAll === "loading" ? (
-        <IconContext.Provider value={{ className: "spinner--large" }}>
-          <div>
-            <ImSpinner9 />
-          </div>
-        </IconContext.Provider>
+        <h3>Chargement en cours</h3>
       ) : adminStatus.getAll === "failed" ? (
         <h3>quelque chose s'est mal passe</h3>
       ) : adminStatus.getAll === "succeded" && users.length > 0 ? (
@@ -46,7 +42,7 @@ const UserListContratCommande = () => {
                     state: { user },
                   }}
                 >
-                  <span>view bon Commande </span>
+                  <span>voir les bons Commandes </span>
                 </Link>
                 <Link
                   className="linkcontbon"
@@ -55,7 +51,7 @@ const UserListContratCommande = () => {
                     state: { user },
                   }}
                 >
-                  <span>view Contrat </span>
+                  <span>voir les Contrats </span>
                 </Link>
               </div>
             </div>

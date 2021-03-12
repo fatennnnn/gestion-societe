@@ -1,63 +1,303 @@
 .acceuil {
-  padding-top: 80px;
+  /* padding-top: 80px; */
   /* border: 1px solid red; */
   width: 100%;
   display: flex;
   flex-direction: column;
 }
+.acceuil__header {
+  position: relative;
+}
+.acceuil__header__main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.acceuil__header__content {
+  position: relative;
+  top: -20px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  /* border: 1px solid red; */
+  width: 300px;
+  z-index: 10;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.514);
+}
+.acceuil__header__content > h2 {
+  color: white;
+  font-weight: 400;
+}
 .site__titre {
   margin-top: 10px;
-  color: #4054b2;
-  background-image: url("./finance_1.jpg");
-  background-position: left;
+  font-style: italic;
+  font-size: 2rem;
+  color: white;
+  /* background-color: #b5df2e; */
+  /* background-color: #f75823; */
+  background-image: url("./home.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 200px;
+  height: 300px;
 }
 .site__title--head {
   font-size: larger;
 }
 .acceuil__highlight {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  /* color: ; */
+  color: var(--secondary-color);
 }
 .acceuil__description {
-  margin-top: 20px;
-  color: #4054b2;
+  color: var(--bg-light);
   font-size: 0.9rem;
   font-weight: 400;
   text-align: center;
   padding: 10px;
 }
-
+.service-text-line {
+  border-bottom: 3px solid var(--text-name);
+  display: inline-block;
+  width: 40px;
+  margin-bottom: 30px;
+}
 .acceuil__service {
+  position: relative;
+  top: -60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+.acceuil__service > h2 {
   margin-top: 20px;
-  padding: 15px 10px;
+  padding: 30px 10px;
   font-weight: 400;
-  color: white;
-  background-color: #4054b2;
+  color: var(--bg-light);
+  text-align: center;
+  font-size: 1.6rem;
+}
+.acceuil__service__content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.acceuil__service__pays {
+  flex: 1;
+  height: 170px;
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.acceuil__service__pays > p {
+  color: var(--bg-light);
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.pays__fr {
+  background: url("./france.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pays__uk {
+  background: url("./england.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+}
+.pays__tn {
+  background: url("./tunisie.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.acceuil__all-services {
+  position: relative;
+  top: -40px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.acceuil__all-services > h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.acceuil__first-service,
+.acceuil__third-service,
+.acceuil__second-service {
+  position: relative;
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+  width: 100%;
+  margin-bottom: 30px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.514);
+}
+.acceuil__first-service__bg {
+  background: url("./web.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+.acceuil__second-service__bg {
+  background: url("./finance.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+.acceuil__third-service__bg {
+  background: url("./mosque.jpg");
+  background-position: 0 -40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 320px;
+}
+.acceuil__first-service > h3,
+.acceuil__second-service > h3 {
+  font-size: 1.8rem;
+  position: absolute;
+  font-family: "El Messiri", sans-serif;
+  color: var(--bg-light);
+  top: 205px;
+  background: #4055b2b2;
+  /* border: 1px solid red; */
+  width: 100%;
+  text-align: center;
+}
+.acceuil__third-service__bg > h3 {
+  line-height: 2rem;
+  font-size: 1.8rem;
+  position: absolute;
+  font-family: "El Messiri", sans-serif;
+  color: var(--bg-light);
+  top: 250px;
+  background: #4055b2b2;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+.acceuil__service-text,
+.acceuil__third-service-text {
+  padding: 10px 20px;
+}
+.acceuil__service-text > p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 15px 0;
+  text-align: center;
+  border: none;
+}
+
+.acceuil__third-service-text > p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 15px 0;
+  text-align: center;
+  border: none;
 }
 
 @media (min-width: 480px) {
-  .workerlist {
-    /* background-color: green; */
+  .site__titre {
+    height: 450px;
+  }
+  .acceuil__header__content {
+    width: 480px;
+    padding: 20px;
+  }
+  .acceuil__service__pays {
+    height: 200px;
+    /* width: 350px; */
+    /* background-color: red; */
+  }
+  .acceuil__first-service,
+  .acceuil__third-service,
+  .acceuil__second-service {
+    width: 400px;
   }
 }
 
 @media (min-width: 768px) {
-  .workerlist {
-    /* background-color: blue; */
+  .site__titre {
+    height: 550px;
+  }
+  .acceuil__header__content {
+    width: 380px;
+    padding: 10px;
+    align-self: stretch;
+    justify-content: center;
+  }
+  .acceuil__header__main {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .acceuil__all-services__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .acceuil__first-service,
+  .acceuil__second-service {
+    width: 380px;
+  }
+  .acceuil__third-service {
+    display: flex;
+    background: var(--primary-color);
+    width: 750px;
+    /* padding: 50px; */
+    justify-content: space-between;
+
+    align-items: center;
+  }
+  .acceuil__third-service__bg {
+    border: 3px soid yellow;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 580px;
+    flex: 1;
+  }
+  .acceuil__third-service__bg > h3 {
+    position: relative;
+    top: 50%;
+  }
+  .acceuil__third-service-text {
+    flex: 1;
   }
 }
 
 @media (min-width: 1024px) {
-  .workerlist {
-    /* background-color: purple; */
+  .site__titre {
+    /* background-size: contain; */
+  }
+  .acceuil__header__content {
+    width: 500px;
+  }
+  .acceuil__service__pays {
+    height: 250px;
+  }
+  .acceuil__third-service {
+    display: flex;
+    width: 900px;
+  }
+  .acceuil__first-service,
+  .acceuil__second-service {
+    width: 480px;
   }
 }
 
 @media (min-width: 1280px) {
-  .workerlist {
-    /* background-color: orange; */
-  }
 }

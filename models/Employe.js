@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const UserSchema = new mongoose.Schema({
+const EmployeSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -22,5 +22,6 @@ const UserSchema = new mongoose.Schema({
   telephone: {
     type: String,
   },
+  //matricule
 });
-module.exports = mongoose.model("Employe", UserSchema);
+module.exports = mongoose.model("Employe", EmployeSchema);

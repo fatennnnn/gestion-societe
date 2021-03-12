@@ -23,47 +23,44 @@ const Login = () => {
 
   return (
     <div className="signin">
-      <h1>Mon Compte</h1>
-
-      <div className="signin__container">
-        <h1>Connexion</h1>
-        <form>
-          <div className="signin__form__group">
-            <h5>Email</h5>
-            <input
-              className="signin__container__form__input valid__input"
-              type="text"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="signin__form__group">
-            <h5>Mot de passe</h5>
-            <input
-              className="signin__container__form__input valid__input"
-              type="text"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
-          </div>
-          <button
-            type="submit"
-            // value="Envoyer"
-            className="signin__signInButton"
-            onClick={handleSubmit}
-          >
-            Envoyer
-          </button>
-        </form>
+      <h2>Se connecter</h2>
+      <span className="text-line"></span>
+      <form className="signin__container">
+        <div className="signin__form__group">
+          <p>Email</p>
+          <input
+            className="signin__container__form__input"
+            type="text"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="signin__form__group">
+          <p>Mot de passe</p>
+          <input
+            className="signin__container__form__input"
+            type="text"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </div>
+        <button
+          type="submit"
+          // value="Envoyer"
+          className="signin__signInButton"
+          onClick={handleSubmit}
+        >
+          connexion
+        </button>
         <p>
           Vous n'avez pas de compte?
           <Link className="signup" to="/sign-up">
-            <span> S'identifier</span>
+            <span> S'inscrire</span>
           </Link>
         </p>
-      </div>
+      </form>
     </div>
   );
 };

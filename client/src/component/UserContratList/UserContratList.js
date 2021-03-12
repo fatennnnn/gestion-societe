@@ -29,43 +29,45 @@ const UserContratList = () => {
     setValues({ ...values, numPages });
   };
   return (
-    <div className="user__contrat">
+    <div className="userclient__contrat">
       <h2>liste contrat :{user.nom} </h2>
       <AddContrat userId={user._id} />
-      {contratStatus.getAll === "loading" ? (
-        <span>loading</span>
-      ) : contratStatus.getAll == "succeded" ? (
-        contrat.map((item) => (
-          <div className="user__contrat__list" key={item._id}>
-            <h4>{item.nomcontrat}</h4>
-            {/* <span>{item.contratUrl}</span> */}
-            <div className="user__contrat__list__pdf">
-              <Document
-                // style={{ width: 600 }}
-                file={`../${item.contratUrl}`}
-                onLoadSuccess={onDocumentLoadSuccess}
-              >
-                <Page
-                  className="user__contrat__list__pdf--color"
-                  pageNumber={pageNumber}
-                  width={200}
-                  height={200}
-                />
-              </Document>
-            </div>
+      <div className="userclient__contrat__list__all">
+        {contratStatus.getAll === "loading" ? (
+          <h3>Chargement en cours</h3>
+        ) : contratStatus.getAll == "succeded" ? (
+          contrat.map((item) => (
+            <div className="userclient__contrat__list" key={item._id}>
+              <h4>{item.nomcontrat}</h4>
+              {/* <span>{item.contratUrl}</span> */}
+              <div className="userclient__contrat__list__pdf">
+                <Document
+                  // style={{ width: 600 }}
+                  file={`../${item.contratUrl}`}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                >
+                  <Page
+                    className="userclient__contrat__list__pdf--color"
+                    pageNumber={pageNumber}
+                    width={250}
+                    height={300}
+                  />
+                </Document>
+              </div>
 
-            {/* console.log("id",{item._id}) */}
-            <button
-              className="user__contrat__delete"
-              onClick={() => handleClick(item._id)}
-            >
-              supprimer
-            </button>
-          </div>
-        ))
-      ) : (
-        <h4>error</h4>
-      )}
+              {/* console.log("id",{item._id}) */}
+              <button
+                className="userclient__contrat__delete"
+                onClick={() => handleClick(item._id)}
+              >
+                supprimer
+              </button>
+            </div>
+          ))
+        ) : (
+          <h3>erreur</h3>
+        )}
+      </div>
     </div>
   );
 };

@@ -52,8 +52,8 @@ const UserBonCommandeList = () => {
       <Page
         className="user__boncommande__list__pdf--color"
         pageNumber={pageNumber}
-        width={200}
-        height={200}
+        width={250}
+        height={300}
       />
     </Document>
   );
@@ -65,45 +65,39 @@ const UserBonCommandeList = () => {
     dispatch(downloadFile({ path, mimetype: "application/pdf" }));
   };
   return (
-    <div className="user__boncommande">
+    <div className="useruser__boncommande">
       <h2>liste Bon Commande :{user.nom} </h2>
+      <div className="useruser__bon-all">
+        {bonCommandeStatus.getAll === "loading" ? (
+          <h3>Chargement en cours</h3>
+        ) : bonCommandeStatus.getAll == "succeded" ? (
+          bonCommande.map((item) => (
+            <div className="useruser__boncommande__list" key={item._id}>
+              <h4>{item.nombonCommande}</h4>
+              <div className="useruser__boncommande__list__pdf">
+                {myDoc(item)}
+              </div>
 
-      {bonCommandeStatus.getAll === "loading" ? (
-        <span>loading</span>
-      ) : bonCommandeStatus.getAll == "succeded" ? (
-        bonCommande.map((item) => (
-          <div className="user__boncommande__list" key={item._id}>
-            <h4>{item.nombonCommande}</h4>
-            <div className="user__boncommande__list__pdf">{myDoc(item)}</div>
-            {/* 
-            <button onClick={() => download(`../${item.contratUrl}`)}>
-              telecharger
-            </button>
-            <a
-              href={`../../${item.contratUrl}`}
-              download="proposed_file_name.pdf"
-            >
-              Download
-            </a> */}
-            <div className="user__boncommande__button">
-              <button
-                className="user__boncommande__delete"
-                onClick={() => handleClick(item._id)}
-              >
-                supprimer
-              </button>
-              <button
-                className="user__boncommande__delete"
-                onClick={() => handleDownload(item.bonCommandeUrl)}
-              >
-                telecharger
-              </button>
+              <div className="useruser__boncommande__button">
+                <button
+                  className="useruser__boncommande__delete"
+                  onClick={() => handleClick(item._id)}
+                >
+                  supprimer
+                </button>
+                <button
+                  className="useruser__boncommande__delete"
+                  onClick={() => handleDownload(item.bonCommandeUrl)}
+                >
+                  telecharger
+                </button>
+              </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <span>error</span>
-      )}
+          ))
+        ) : (
+          <h3>error</h3>
+        )}
+      </div>
     </div>
   );
 };

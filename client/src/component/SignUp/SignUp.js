@@ -86,190 +86,190 @@ const SignUp = () => {
   };
   return (
     <div className="mysignuppage">
-      <h1>Mon Compte</h1>
+      <h2>Créer un compte</h2>
+      <span className="text-line"></span>
 
-      <div className="myrealsignuppage">
-        <h1>S'inscrire</h1>
-        <form>
-          <div className="hubform-group">
-            <h5>Nom</h5>
-            {/* <span>
+      <form className="myrealsignuppage">
+        <div className="hubform-group">
+          <p>Nom</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter((err) => err.param === "nom")[0]
                 .msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="text"
-              name="nom"
-              value={nom}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>Prenom</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="nom"
+            value={nom}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>Prenom</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter((err) => err.param === "prenom")[0]
                 .msg}
           </span> */}
-            <input
-              className="hubform-group-input valid__input "
-              type="text"
-              name="prenom"
-              value={prenom}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>Numero siret</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="prenom"
+            value={prenom}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>Numero siret</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter(
                 (err) => err.param === "numerosiret"
               )[0].msg}
           </span> */}
-            <input
-              className="hubform-group-input valid__input "
-              type="text"
-              name="numerosiret"
-              value={numerosiret}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>Adresse détail</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="numerosiret"
+            value={numerosiret}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>Adresse détail</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter((err) => err.param === "detail")[0]
                 .msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="text"
-              name="detail"
-              value={detail}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>Region</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="detail"
+            value={detail}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>Region</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter((err) => err.param === "region")[0]
                 .msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="text"
-              name="region"
-              value={region}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>Email</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="region"
+            value={region}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>Email</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter((err) => err.param === "email")[0]
                 .msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="text"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>TVA</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>TVA</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter((err) => err.param === "tva")[0]
                 .msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="text"
-              name="tva"
-              value={tva}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>Telephone</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="tva"
+            value={tva}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>Telephone</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter((err) => err.param === "tva")[0]
                 .msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="text"
-              name="telephone"
-              value={telephone}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>GSM</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="telephone"
+            value={telephone}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>GSM</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter((err) => err.param === "gsm")[0]
                 .msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="text"
-              name="gsm"
-              value={gsm}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>Site web</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="gsm"
+            value={gsm}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>Site web</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter(
                 (err) => err.param === "siteweb"
               )[0].msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="siteweb"
-              name="siteweb"
-              value={siteweb}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="hubform-group">
-            <h5>Mot de passe</h5>
-            {/* <span>
+          <input
+            className="hubform-group-input"
+            type="siteweb"
+            name="siteweb"
+            value={siteweb}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="hubform-group">
+          <p>Mot de passe</p>
+          {/* <span>
             {adminStatus.create === "failed" &&
               adminErrors.create &&
               adminErrors.create.data.filter(
                 (err) => err.param === "motdepasse"
               )[0].msg}
           </span> */}
-            <input
-              className="hubform-group-input"
-              type="text"
-              name="motdepasse"
-              value={motdepasse}
-              onChange={handleChange}
-            />
-          </div>
+          <input
+            className="hubform-group-input"
+            type="text"
+            name="motdepasse"
+            value={motdepasse}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="signup-footer">
           <button
             className="signup-Button"
             type="submit"
@@ -278,18 +278,18 @@ const SignUp = () => {
             {status === "loading" ? (
               <span>loading</span>
             ) : (
-              <span>S'inscrire</span>
+              <span>s'inscrire</span>
               //   (<Link to="/user-section"></Link>)
             )}
           </button>
-        </form>
-        <p>
-          Vous avez déjà un compte?
-          <Link className="signIn" to="/connexion">
-            <span>Connecter</span>
-          </Link>
-        </p>
-      </div>
+          <p>
+            Vous avez déjà un compte?
+            <Link className="signIn" to="/connexion">
+              <span> S'identifier</span>
+            </Link>
+          </p>
+        </div>
+      </form>
     </div>
   );
 };

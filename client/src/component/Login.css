@@ -1,79 +1,75 @@
 .signin {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
-  border: 1px solid red;
+  background-color: var(--bg-light);
 }
-.signin > h1 {
-  color: #b24050;
+.signin > h2 {
+  font-weight: 500;
+  margin-top: 20px;
+  color: var(--primary-color);
 }
 
 .signin__container {
   background-color: white;
-
-  width: 300px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  padding: 15px 20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px 50px 30px;
-  border: 1px solid #d3ced2;
-  border-radius: 5px;
+  align-items: center;
 }
 
-.signin__container > h1 {
-  color: #1b2431;
-  font-weight: 500;
-  margin-bottom: 40px;
-  text-align: center;
-  font-size: 2rem;
-}
 .signin__form__group {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  margin: 10px 0;
 }
-.signin__form__group > h5 {
-  font-weight: 700;
-  font-size: medium;
-  margin-bottom: 5px;
-  /* font-weight: 200; */
-  color: #1b2431;
+
+.signin__form__group > p {
+  color: var(--primary-color);
+  margin: 0 10px;
+  font-weight: 500;
 }
 
 .signin__container__form__input {
-  height: 20px;
-  margin-bottom: 20px;
-  width: 98%;
-  height: 30px;
-  border-radius: 7px;
-}
-.valid__input {
-  border-bottom: 1px solid #1b2431;
-  background-color: white;
+  width: 250px;
+  border: none;
+  background-color: var(--bg-light);
+  outline: none;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+  color: var(--primary-color);
 }
 
 .signin__container > p {
-  margin-top: 25px;
+  margin: 25px 0 10px;
   font-size: 12px;
   text-align: center;
-  color: #1b2431;
+  color: var(--primary-color);
 }
 .signup {
-  color: #b24050;
+  color: var(--text-name);
   text-decoration: none;
   font-weight: 700;
 }
 
 .signin__signInButton {
-  background: #ebe9eb;
-  width: 50%;
-  height: 40px;
-  font-size: 0.9rem;
+  width: 250px;
   border: none;
-  margin-top: 40px;
-  color: #515151;
   outline: none;
+  font-size: 1.1rem;
+  padding: 10px;
+  margin: 10px;
+  color: var(--bg-light);
+  font-weight: 500;
+  background-color: var(--secondary-color);
   cursor: pointer;
-  border-radius: 3px;
 }
 
 /* Spinner */
@@ -91,6 +87,12 @@
   .signin__container {
     width: 400px;
     padding: 30px 50px;
+  }
+  .signin__container__form__input {
+    width: 300px;
+  }
+  .signin__signInButton {
+    width: 300px;
   }
 }
 

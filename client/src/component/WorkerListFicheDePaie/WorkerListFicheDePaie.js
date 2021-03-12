@@ -20,9 +20,9 @@ const WorkerListFicheDePaie = () => {
       <h2>Gestion des employés </h2>
 
       {workerStatut.getAll === "loading" ? (
-        <span className="error">loading</span>
+        <h3>Chargement en cours</h3>
       ) : workerStatut.getAll === "failed" ? (
-        <span className="error">quelque chose s'est mal passé</span>
+        <h3>quelque chose s'est mal passé</h3>
       ) : workerStatut.getAll === "succeded" && workers.length > 0 ? (
         workers && workers.length > 0 ? (
           workers.map((worker) => (
@@ -35,7 +35,7 @@ const WorkerListFicheDePaie = () => {
                   state: { worker },
                 }}
               >
-                <h5>view fiche de paie </h5>
+                <h5>voir fiches de paies </h5>
               </Link>
             </div>
           ))

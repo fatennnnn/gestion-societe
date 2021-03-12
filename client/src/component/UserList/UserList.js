@@ -24,13 +24,9 @@ const UserList = () => {
       <h2>facturation</h2>
 
       {adminStatus.getAll === "loading" ? (
-        <IconContext.Provider value={{ className: "spinner--large" }}>
-          <div>
-            <ImSpinner9 />
-          </div>
-        </IconContext.Provider>
+        <h3>Chargement en cours</h3>
       ) : adminStatus.getAll === "failed" ? (
-        <h3>quelque chose s'est mal passe</h3>
+        <h3>Quelque chose s'est mal passe</h3>
       ) : adminStatus.getAll === "succeded" && users.length > 0 ? (
         users && users.length > 0 ? (
           users.map((user) => (
@@ -49,7 +45,7 @@ const UserList = () => {
                     state: { user },
                   }}
                 >
-                  <span>view facts</span>
+                  <span>voir les factures</span>
                 </Link>
               </div>
             </div>

@@ -33,41 +33,44 @@ const UserFactList = () => {
     setValues({ ...values, numPages });
   };
   return (
-    <div className="user__fact">
+    <div className="userclient__fact">
       <h2>Factures :{user.nom} </h2>
       <AddFacture userId={user._id} />
-      {factureStatus.getFactId === "loading" ? (
-        <span>loading</span>
-      ) : factureStatus.getFactId == "succeded" ? (
-        facture.map((item) => (
-          <div className="user__facture__list" key={item._id}>
-            <h4>{item.nomfacture}</h4>
-            <div className="user__facture__list__pdf">
-              <Document
-                // style={{ width: 600 }}
-                file={`../${item.factureUrl}`}
-                onLoadSuccess={onDocumentLoadSuccess}
+      <div className="userclient__fact-all">
+        {factureStatus.getFactId === "loading" ? (
+          <h3>Chargement en cours</h3>
+        ) : factureStatus.getFactId == "succeded" ? (
+          facture.map((item) => (
+            <div className="userclient__facture__list" key={item._id}>
+              <h4>{item.nomfacture}</h4>
+              <div className="userclient__facture__list__pdf">
+                <Document
+                  file={`../${item.factureUrl}`}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                >
+                  <Page
+                    style={{
+                      className: "userclient__facture__list__pdf--color",
+                    }}
+                    pageNumber={pageNumber}
+                    width={250}
+                    height={300}
+                  />
+                </Document>
+              </div>
+              {/* console.log("id",{item._id}) */}
+              <button
+                className="userclient__facture__delete"
+                onClick={() => handleClick(item._id)}
               >
-                <Page
-                  className="user__facture__list__pdf--color"
-                  pageNumber={pageNumber}
-                  width={200}
-                  height={200}
-                />
-              </Document>
+                supprimer
+              </button>
             </div>
-            {/* console.log("id",{item._id}) */}
-            <button
-              className="user__facture__delete"
-              onClick={() => handleClick(item._id)}
-            >
-              supprimer
-            </button>
-          </div>
-        ))
-      ) : (
-        <h4>error</h4>
-      )}
+          ))
+        ) : (
+          <h3>erreur</h3>
+        )}
+      </div>
     </div>
   );
 };
