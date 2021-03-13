@@ -29,49 +29,40 @@ const WorkerFicheDePaie = () => {
   const onDocumentLoadSuccess = ({ numPages }) => {
     setValues({ ...values, numPages });
   };
-  // const mois = (da) => {
-  //   let a = String(da);
-  //   // let str1=a[0]+a[1]
-  //   if (a.slice(0, 1) > 1 || a.slice(0, 2) > 12) {
-  //     return "";
-  //   }
-  //   // else if(str1<10)
-  //   // {str1.padStart(2,"0")}
-  //   // let str2=a[2]+a[3]
-  //   // if(num.length==4){return n}
-  //   return da.slice(0, 2) + "/" + da.slice(2);
-  // };
+
   return (
-    <div className="worker__fiche__admin">
-      <h2>Fiche de paie :{worker.email} </h2>
+    <div className="worker__fichedepaie__admin">
+      <h2>Fiches de paies :{worker.email} </h2>
       <AddFicheDePaie userId={worker._id} />
-      {fichedePaieStatus.getAll === "loading" ? (
-        <span>loading</span>
-      ) : fichedePaieStatus.getAll == "succeded" ? (
-        fichedePaie.map((item) => (
-          <div className="worker_list_fiche" key={item._id}>
-            <h4>{item.nomFichedePaie}</h4>
-            <div className="affiche_fiche" style={{ width: 300 }}>
-              <Document
-                // style={{ width: 600 }}
-                file={`../${item.fichedePaieUrl}`}
-                onLoadSuccess={onDocumentLoadSuccess}
+      <div className="worker_list_fichedepaie__all">
+        {fichedePaieStatus.getAll === "loading" ? (
+          <h3>Chargement en cours</h3>
+        ) : fichedePaieStatus.getAll == "succeded" ? (
+          fichedePaie.map((item) => (
+            <div className="worker_list_fichedepaie" key={item._id}>
+              <h4>{item.nomFichedePaie}</h4>
+              <div className="affiche_fichedepaie">
+                <Document
+                  // style={{ width: 600 }}
+                  file={`../${item.fichedePaieUrl}`}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                >
+                  <Page pageNumber={pageNumber} width={250} height={300} />
+                </Document>
+              </div>
+              {/* console.log("id",{item._id}) */}
+              <button
+                className="delete_fichedepaie"
+                onClick={() => handleClick(item._id)}
               >
-                <Page pageNumber={pageNumber} width={300} height={200} />
-              </Document>
+                Supprimer
+              </button>
             </div>
-            {/* console.log("id",{item._id}) */}
-            <button
-              className="delete_fiche"
-              onClick={() => handleClick(item._id)}
-            >
-              Supprimer
-            </button>
-          </div>
-        ))
-      ) : (
-        <h4>error</h4>
-      )}
+          ))
+        ) : (
+          <h3>error</h3>
+        )}
+      </div>
     </div>
   );
 };

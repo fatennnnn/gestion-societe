@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Document, Page, pdfjs } from "react-pdf";
 
-import { getContratUserId, downloadFile } from "../../features/contrats";
-import "./GetContratClient.css";
-const GetContratClient = () => {
+import { getFactureUserId, downloadFile } from "../../features/factures";
+import "./GetFactureClient.css";
+const GetFactureClient = () => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   const [values, setValues] = useState({
     numPages: null,
@@ -16,12 +16,12 @@ const GetContratClient = () => {
   const { user, isAuthenticated } = useSelector((state) => state.auth);
   useEffect(() => {
     if (isAuthenticated) {
-      dispatch(getContratUserId(user.userId));
+      dispatch(getFactureUserId(user.userId));
     }
   }, [isAuthenticated]);
 
-  const { contrat, contratErrors, contratStatus } = useSelector(
-    (state) => state.contrats
+  const { facture, factureErrors, factureStatus } = useSelector(
+    (state) => state.factures
   );
   const onDocumentLoadSuccess = ({ numPages }) => {
     setValues({ ...values, numPages });
@@ -30,33 +30,33 @@ const GetContratClient = () => {
     dispatch(downloadFile({ path, mimetype: "application/pdf" }));
   };
   return (
-    <div className="usercompte__contrat">
-      <h2>listes contrats </h2>
-      <div className="usercompte__All_cont">
-        {contratStatus.getAll === "loading" ? (
-          <h3>Chargement en cour</h3>
-        ) : contratStatus.getAll == "succeded" ? (
-          contrat.map((item) => (
-            <div className="usercompte__contrat__list" key={item._id}>
-              <h4>{item.nomcontrat}</h4>
-              {/* <span>{item.contratUrl}</span> */}
-              <div className="usercompte__contrat__list__pdf">
+    <div className="factureclientuser">
+      <h2>listes Factures </h2>
+      <div className="factureclientuser__all">
+        {factureStatus.getFactId === "loading" ? (
+          <h3>Chargement en cours</h3>
+        ) : factureStatus.getFactId == "succeded" ? (
+          facture.map((item) => (
+            <div className="factureclientuser__list" key={item._id}>
+              <h4>{item.nomfacture}</h4>
+              <div className="factureclientuser__list__pdf">
                 <Document
-                  // style={{ width: 600 }}
-                  file={`../${item.contratUrl}`}
+                  file={`../${item.factureUrl}`}
                   onLoadSuccess={onDocumentLoadSuccess}
                 >
                   <Page
-                    className="usercompte__contrat__list__pdf--color"
+                    // style={{
+                    //   className: "userclient__facture__list__pdf--color",
+                    // }}
                     pageNumber={pageNumber}
-                    width={200}
-                    height={200}
+                    width={250}
+                    height={300}
                   />
                 </Document>
               </div>
               <button
-                className="usercompte__contrat__download"
-                onClick={() => handleDownload(item.contratUrl)}
+                className="factureclientuser__download"
+                onClick={() => handleDownload(item.factureUrl)}
               >
                 telecharger
               </button>
@@ -70,4 +70,4 @@ const GetContratClient = () => {
   );
 };
 
-export default GetContratClient;
+export default GetFactureClient;

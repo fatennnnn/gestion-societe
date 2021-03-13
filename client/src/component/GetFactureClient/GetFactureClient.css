@@ -1,18 +1,18 @@
-.useruser__boncommande > h2 {
+.factureclientuser > h2 {
   color: var(--text-name);
   padding-top: 50px;
   text-align: center;
   text-transform: capitalize;
   margin-bottom: 30px;
 }
-.useruser__bon-all > h3 {
+.factureclientuser__all > h3 {
   color: var(--text-name);
   padding-top: 20px;
   text-align: center;
   text-transform: capitalize;
   font-size: 1.2rem;
 }
-.useruser__boncommande__list {
+.factureclientuser__list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,42 +21,25 @@
   width: 350px;
   height: 600px;
 }
-.useruser__bon-all {
+.factureclientuser__all {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
-.useruser__boncommande__list > h4 {
-  /* border: 1px solid yellow; */
+
+.factureclientuser__list > h4 {
   font-weight: 700;
   color: var(--primary-color);
   font-size: 1.5rem;
-  /* text-align: center; */
   text-transform: capitalize;
   margin-bottom: 20px;
 }
-.useruser__boncommande__list__pdf {
+.factureclientuser__list__pdf {
   border: 2px solid var(--border-color);
 }
-.useruser__boncommande__button {
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: space-between;
-  width: 75%;
-}
-.useruser__boncommande__delete {
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  padding: 5px 20px;
-  color: white;
-  cursor: pointer;
-  background-color: var(--hover-color);
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-.useruser__boncommande__download {
+
+.factureclientuser__download {
   border: none;
   outline: none;
   font-size: 1rem;
@@ -72,23 +55,22 @@
 }
 
 @media (min-width: 768px) {
-  .useruser__bon-all {
+  .factureclientuser__all {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 40px;
   }
-  .useruser__boncommande__list {
-    /* border: 0.5px solid var(--text-name); */
-
+  .factureclientuser__list {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-radius: 2px;
   }
-  .useruser__boncommande__list__pdf {
+  .factureclientuser__list__pdf {
     border: none;
   }
 }
+
 @media (min-width: 1024px) {
 }
 

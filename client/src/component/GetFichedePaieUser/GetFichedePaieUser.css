@@ -1,81 +1,76 @@
-.user__facture > h2 {
-  color: #b24050;
-  padding-top: 120px;
+.user__fiche__user > h2 {
+  color: var(--text-name);
+  padding-top: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 30px;
 }
-.user__facture__list {
+.user__fiche__user__all > h3 {
+  color: var(--text-name);
+  padding-top: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+.user__fiche__list__user {
   display: flex;
-  position: relative;
-  /* border: 1px solid red; */
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 20px;
+  width: 350px;
+  height: 600px;
 }
-.user__facture__list > h4 {
-  /* margin-bottom: 5px; */
+.user__fiche__user__all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.user__fiche__list__user > h4 {
   font-weight: 700;
-  color: #4054b2;
-  font-size: small;
-
-  width: 100px;
-  /* font-size: larger; */
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  /* text-align: center; */
+  text-transform: capitalize;
+  margin-bottom: 20px;
 }
-.user__facture__list__pdf {
-  width: 200px;
-  /* height: 200px; */
-  border: 2px solid #56a73857;
-  /* border: 2px solid blue; */
+.user__fiche__list__user__pdf {
+  border: 2px solid var(--border-color);
 }
 
-.user__facture__download {
+.user__fiche__download__user {
   border: none;
   outline: none;
-  /* width: 100px;
-  height: 40px; */
+  font-size: 1rem;
   padding: 5px 20px;
-  background-color: #23a455;
   color: white;
   cursor: pointer;
+  background-color: var(--secondary-color);
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
-.user__facture__download:hover {
-  background-color: #61ce70;
-  color: #b24050;
-  font-weight: 700;
-}
-/* .user__contrat__list__pdf--color { */
-/* width={200} */
-/* width: 200px;
-  height: 200px; */
-/* border: 2px solid #56a73857; */
-/* border: 2px solid green;
-  height: 300; }*/
 
 @media (min-width: 480px) {
 }
 
 @media (min-width: 768px) {
-  .user__facture__delete {
-    padding: 12px 20px;
+  .user__fiche__user__all {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
   }
-  .user__facture__list > h4 {
-    font-weight: 700;
+  .user__fiche__list__user {
+    /* border: 0.5px solid var(--text-name); */
 
-    font-size: larger;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 2px;
   }
-
-  /* .user__contrat__list {
-    background-color: yellow;
+  .user__fiche__list__user__pdf {
+    border: none;
   }
-  .user__contrat__list__pdf {
-    width: px;
-  }
-  .user__contrat__list__pdf--color {
-    /* width={200} 
-    width: 300px;
-    /* height: 200px; 
-    /* border: 2px solid #56a73857; 
-    border: 2px solid orange;
-    height: 300;
-  } */
 }
 
 @media (min-width: 1024px) {

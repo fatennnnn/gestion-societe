@@ -176,6 +176,9 @@ const Navbar = () => {
       <Link className="navbar__link" to="/user-section/BonDeCommande">
         <span>Bon de Commande</span>
       </Link>
+      <Link className="navbar__link" to="/user-section/Facture">
+        <span>Facture</span>
+      </Link>
       <Link className="navbar__link" to="/">
         <span onClick={handleLog}>Déconnexion</span>
       </Link>

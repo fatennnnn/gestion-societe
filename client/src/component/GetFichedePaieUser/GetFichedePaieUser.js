@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Document, Page, pdfjs } from "react-pdf";
 
@@ -33,34 +32,36 @@ const GetFichedePaieUser = () => {
     dispatch(downloadFile({ path, mimetype: "application/pdf" }));
   };
   return (
-    <div className="user__facture">
-      <h2>liste FICHE DE PAIE </h2>
-      {fichedePaieStatus.getAll === "loading" ? (
-        <span>loading</span>
-      ) : fichedePaieStatus.getAll == "succeded" ? (
-        fichedePaie.map((item) => (
-          <div className="user__facture__list" key={item._id}>
-            <h4>{item.nomFichedePaie}</h4>
-            <div className="user__facture__list__pdf">
-              <Document
-                // style={{ width: 600 }}
-                file={`../${item.fichedePaieUrl}`}
-                onLoadSuccess={onDocumentLoadSuccess}
+    <div className="user__fiche__user">
+      <h2>Fiches de paies </h2>
+      <div className="user__fiche__user__all">
+        {fichedePaieStatus.getAll === "loading" ? (
+          <h3>Chargement en cours</h3>
+        ) : fichedePaieStatus.getAll == "succeded" ? (
+          fichedePaie.map((item) => (
+            <div className="user__fiche__list__user" key={item._id}>
+              <h4>{item.nomFichedePaie}</h4>
+              <div className="user__fiche__list__user__pdf">
+                <Document
+                  // style={{ width: 600 }}
+                  file={`../${item.fichedePaieUrl}`}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                >
+                  <Page pageNumber={pageNumber} width={250} height={300} />
+                </Document>
+              </div>
+              <button
+                className="user__fiche__download__user"
+                onClick={() => handleDownload(item.fichedePaieUrl)}
               >
-                <Page pageNumber={pageNumber} width={200} height={200} />
-              </Document>
+                télécharger
+              </button>
             </div>
-            <button
-              className="user__facture__download"
-              onClick={() => handleDownload(item.fichedePaieUrl)}
-            >
-              telecharger
-            </button>
-          </div>
-        ))
-      ) : (
-        <h4>error</h4>
-      )}
+          ))
+        ) : (
+          <h3>erreur</h3>
+        )}
+      </div>
     </div>
   );
 };

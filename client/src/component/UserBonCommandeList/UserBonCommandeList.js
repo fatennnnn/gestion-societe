@@ -50,7 +50,7 @@ const UserBonCommandeList = () => {
       onLoadSuccess={onDocumentLoadSuccess}
     >
       <Page
-        className="user__boncommande__list__pdf--color"
+        className="useruser__boncommande__list__pdf--color"
         pageNumber={pageNumber}
         width={250}
         height={300}
@@ -86,10 +86,10 @@ const UserBonCommandeList = () => {
                   supprimer
                 </button>
                 <button
-                  className="useruser__boncommande__delete"
+                  className="useruser__boncommande__download"
                   onClick={() => handleDownload(item.bonCommandeUrl)}
                 >
-                  telecharger
+                  télécharger
                 </button>
               </div>
             </div>

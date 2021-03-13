@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import GetContratClient from "../../component/GetContratClient/GetContratClient";
 import GetBonCommandeClient from "../../component/GetBonCommandeClient/GetBonCommandeClient";
+import GetFactureClient from "../../component/GetFactureClient/GetFactureClient";
 const UserSection = () => {
   return (
     <div>
@@ -15,6 +16,9 @@ const UserSection = () => {
         </Route>
         <Route exact path="/user-section/BonDeCommande">
           <GetBonCommandeClient />
+        </Route>
+        <Route exact path="/user-section/Facture">
+          <GetFactureClient />
         </Route>
       </Switch>
     </div>

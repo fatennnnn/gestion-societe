@@ -27,32 +27,34 @@ const GetBonCommandeClient = () => {
     setValues({ ...values, numPages });
   };
   return (
-    <div className="user__boncommande">
+    <div className="usercompte__boncommande">
       <h2>liste Bon Commande </h2>
       <AddBonCommandeClient userId={user.userId} />
-      {bonCommandeStatus.getAll === "loading" ? (
-        <span>loading</span>
-      ) : bonCommandeStatus.getAll == "succeded" ? (
-        bonCommande.map((item) => (
-          <div className="user__boncommande__list" key={item._id}>
-            <h4>{item.nombonCommande}</h4>
-            <div
-              className="user__boncommande__list__pdf"
-              // style={{ width: 600 }}
-            >
-              <Document
+      <div className="usercompte__boncommande__all">
+        {bonCommandeStatus.getAll === "loading" ? (
+          <h3> Chargement en cour </h3>
+        ) : bonCommandeStatus.getAll == "succeded" ? (
+          bonCommande.map((item) => (
+            <div className="usercompte__boncommande__list" key={item._id}>
+              <h4>{item.nombonCommande}</h4>
+              <div
+                className="usercompte__boncommande__list__pdf"
                 // style={{ width: 600 }}
-                file={`../${item.bonCommandeUrl}`}
-                onLoadSuccess={onDocumentLoadSuccess}
               >
-                <Page pageNumber={pageNumber} width={200} height={200} />
-              </Document>
+                <Document
+                  // style={{ width: 600 }}
+                  file={`../${item.bonCommandeUrl}`}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                >
+                  <Page pageNumber={pageNumber} width={200} height={200} />
+                </Document>
+              </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <span>error</span>
-      )}
+          ))
+        ) : (
+          <h3>erreur</h3>
+        )}
+      </div>
     </div>
   );
 };

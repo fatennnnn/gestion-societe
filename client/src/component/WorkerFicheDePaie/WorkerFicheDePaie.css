@@ -1,35 +1,78 @@
-.worker__fiche__admin > h2 {
-  color: #b24050;
-  margin-top: 120px;
+.worker__fichedepaie__admin > h2 {
+  color: var(--text-name);
+  padding-top: 50px;
   text-align: center;
+  text-transform: capitalize;
 }
-.worker_list_fiche {
+.worker_list_fichedepaie__all > h3 {
+  color: var(--text-name);
+  padding-top: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+.worker_list_fichedepaie {
   display: flex;
-  /* position: relative; */
-  /* border: 1px solid red; */
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  /* margin-top: 100px; */
+  margin-top: 20px;
+  width: 350px;
+  height: 600px;
 }
-.worker_list_fiche > h4 {
-  /* margin-bottom: 5px; */
+.worker_list_fichedepaie__all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.worker_list_fichedepaie > h4 {
   font-weight: 700;
-  color: #4054b2;
-  font-size: larger;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  /* text-align: center; */
+  text-transform: capitalize;
+  margin-bottom: 20px;
 }
-.delete_fiche {
+.delete_fichedepaie {
   border: none;
   outline: none;
-  padding: 10px 20px;
-  background-color: #23a455;
+  font-size: 1rem;
+  padding: 5px 20px;
   color: white;
   cursor: pointer;
+  background-color: var(--hover-color);
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
-.affiche_fiche {
-  border: 2px solid #56a73857;
+.affiche_fichedepaie {
+  border: 2px solid var(--border-color);
 }
-.delete_fiche:hover {
-  background-color: #61ce70;
-  color: #b24050;
-  font-weight: 700;
+
+@media (min-width: 480px) {
+}
+
+@media (min-width: 768px) {
+  .worker_list_fichedepaie__all {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  .worker_list_fichedepaie {
+    /* border: 0.5px solid var(--text-name); */
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 2px;
+  }
+  .affiche_fichedepaie {
+    border: none;
+  }
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1280px) {
 }
